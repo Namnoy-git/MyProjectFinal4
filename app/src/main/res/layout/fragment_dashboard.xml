@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/colorwhite"
+    tools:context=".ui.dashboard.DashboardFragment">
+
+    <GridLayout
+        android:columnCount="2"
+        android:rowCount="3"
+        android:alignmentMode="alignMargins"
+        android:columnOrderPreserved="false"
+        android:layout_weight="8"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="14dp">
+        <!-- Row 1 -->
+        <!-- Column 1 -->
+
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="174dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="50dp"
+            android:id="@+id/profile"
+            android:src="@drawable/profileone" />
+
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="174dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="50dp"
+            android:id="@+id/hotline"
+            android:src="@drawable/calone" />
+
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="174dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/logout"
+            android:src="@drawable/logoutone" />
+
+<!--        <Button-->
+<!--            android:id="@+id/TV_logout"-->
+<!--            android:layout_width="125dp"-->
+<!--            android:layout_height="35dp"-->
+<!--            android:layout_marginStart="16dp"-->
+<!--            android:layout_marginLeft="16dp"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            android:text="Logout"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent" />-->
+
+
+    </GridLayout>
+</LinearLayout>
+

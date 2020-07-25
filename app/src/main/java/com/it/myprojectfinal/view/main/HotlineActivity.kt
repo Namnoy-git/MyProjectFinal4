@@ -1,7 +1,8 @@
-package com.example.ui
+package com.it.myprojectfinal.view.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.it.myprojectfinal.R
 
 class HotlineActivity : AppCompatActivity() {
 

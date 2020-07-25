@@ -1,4 +1,9 @@
 package com.it.myprojectfinal.model.body
 
-class BodyUpdateUser {
-}
+data class BodyUpdateUser (
+
+
+    val username: String,
+    val phone: String
+
+)

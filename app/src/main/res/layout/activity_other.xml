@@ -1,9 +1,313 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.main.OtherActivity">
+    tools:context=".view.main.ShowDataNoti"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/showcenter"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_weight="1"
+                android:layout_marginTop="20dp"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/mitr"
+                android:text="เหตุด่วนเหตุร้าย"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/showcall"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/ic_phone_in_talk"
+                android:drawablePadding="3dp"
+                android:fontFamily="@font/mitr"
+                android:text="โทร 191"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/showcenter1"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/mitr"
+                android:text="เหตุเพลิงไหม้"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/showcall1"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/ic_phone_in_talk"
+                android:drawablePadding="3dp"
+                android:fontFamily="@font/mitr"
+                android:text="โทร 199"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/showcenter2"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/mitr"
+                android:text="แพทย์ฉุกเฉิน"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/showcall2"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/ic_phone_in_talk"
+                android:drawablePadding="3dp"
+                android:fontFamily="@font/mitr"
+                android:text="โทร 1669"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/showcenter3"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/mitr"
+                android:text="ตำรวจท่องเที่ยว"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/showcall3"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/ic_phone_in_talk"
+                android:drawablePadding="3dp"
+                android:fontFamily="@font/mitr"
+                android:text="โทร 1155"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/showcenter4"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/mitr"
+                android:text="แจ้งคนหาย"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/showcall4"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/ic_phone_in_talk"
+                android:drawablePadding="3dp"
+                android:fontFamily="@font/mitr"
+                android:text="โทร 1300"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/showcenter5"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/mitr"
+                android:text="แจ้งรถหาย"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/showcall5"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/ic_phone_in_talk"
+                android:drawablePadding="3dp"
+                android:fontFamily="@font/mitr"
+                android:text="โทร 1192"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/showcenter6"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/mitr"
+                android:text="กรมทางหลวงชนบท"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/showcall6"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/ic_phone_in_talk"
+                android:drawablePadding="3dp"
+                android:fontFamily="@font/mitr"
+                android:text="โทร 1146"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/showcenter7"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/mitr"
+                android:text="จส.100"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/showcall7"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/ic_phone_in_talk"
+                android:drawablePadding="3dp"
+                android:fontFamily="@font/mitr"
+                android:text="โทร 1808"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/showcenter8"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/mitr"
+                android:text="อุบัติเหตุทางน้ำ"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/showcall8"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/ic_phone_in_talk"
+                android:drawablePadding="3dp"
+                android:fontFamily="@font/mitr"
+                android:text="โทร 1196"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/showcenter9"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/mitr"
+                android:text="จราจร"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/showcall9"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/ic_phone_in_talk"
+                android:drawablePadding="3dp"
+                android:fontFamily="@font/mitr"
+                android:text="โทร 1197"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/showcenter10"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/mitr"
+                android:text="ศูนย์เตือนภัยแห่งชาติ"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/showcall10"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/ic_phone_in_talk"
+                android:drawablePadding="3dp"
+                android:fontFamily="@font/mitr"
+                android:text="โทร 192"
+                android:textSize="24dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

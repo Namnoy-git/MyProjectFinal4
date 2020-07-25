@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.login.LoginActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/blue"
+        android:scaleType="centerCrop"
+        android:id="@+id/loginback">
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="20dp"
+        android:scaleType="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:src="@drawable/icon_app"></ImageView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/logo"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/trans_white_rectangle"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="@font/mitr"
+                android:gravity="center"
+                android:text="ศูนย์กลางช่วยเหลือผู้ประสบเหตุสาธารณภัย"
+                android:textColor="@color/colorBlack"
+                android:textSize="24dp"
+                android:textStyle="bold">
+            </TextView>
+
+            <AutoCompleteTextView
+                android:id="@+id/edt_username_Login"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/rounded_white"
+                android:drawableLeft="@drawable/ic_person"
+                android:drawablePadding="5dp"
+                android:hint="ชื่อผู้ใช้งาน"
+                android:fontFamily="@font/mitr"
+                android:textSize="14sp"
+                android:layout_marginBottom="15dp"/>
+
+            <AutoCompleteTextView
+                android:id="@+id/edt_Password_Login"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/rounded_white"
+                android:drawableLeft="@drawable/ic_vpn_key"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/mitr"
+                android:hint="รหัสผ่าน"
+                android:inputType="textPassword"
+                android:textSize="14sp" />
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/btn_Login"
+                android:text="เข้าสู่ระบบ"
+                android:fontFamily="@font/mitr_semibold"
+                android:background="@drawable/login_button"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <Button
+                android:id="@+id/tv_Back_Register"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/register_button"
+                android:fontFamily="@font/mitr_semibold"
+                android:text="สมัครสมาชิก"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

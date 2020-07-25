@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">My Project Final</string>
+    <!--    <string name="title_activity_main">MainActivity</string>-->
+    <string name="title_home">หน้าหลัก</string>
+    <string name="title_dashboard">อื่นๆ</string>
+    <string name="title_notifications">เเจ้งเหตุ</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="type">
+        <item>อุทกภัย</item>
+        <item>ภัยแล้ง</item>
+        <item>วาตภัย</item>
+        <item>ภัยหนาว</item>
+        <item>ไฟป่า</item>
+        <item>อัคคีภัย</item>
+        <item>แผ่นดินไหว</item>
+        <item>ดินถล่ม/โคลนถล่ม</item>
+        <item>อาคารถล่ม/ทรุด</item>
+        <item>ภัยจากการคมนาคมขนส่ง</item>
+        <item>ภัยสารเคมี</item>
+        <item>วัตถุอันตราย</item>
+        <item>ภัยจากการก่อกวนความไม่สงบ/วินาศกรรม</item>
+        <item>ภัยทางธรรมชาติ</item>
+        <item>ภัยอื่นๆ</item>
+
+    </string-array>
+    <string name="title_activity_maps">Map</string>
+
+
+</resources>
+
+
