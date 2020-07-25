@@ -1,0 +1,259 @@
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HotlineActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/trans_white_rectangle"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/mitr"
+            android:gravity="center"
+            android:text="สายด่วน"
+            android:textColor="@color/colorBlack"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/trans_white_rectangle"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="1"
+                    android:drawablePadding="5dp"
+                    android:fontFamily="@font/mitr"
+                    android:text="กรมทางหลวงชนบท"
+                    android:textSize="23dp" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_weight="1"
+                    android:drawableRight="@drawable/ic_phone_in_talk"
+                    android:drawablePadding="3dp"
+                    android:fontFamily="@font/mitr"
+                    android:text="1146"
+                    android:textSize="26dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/trans_white_rectangle"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="1"
+                    android:drawablePadding="5dp"
+                    android:fontFamily="@font/mitr"
+                    android:text="เหตุด่วนเหตุร้าย"
+                    android:textSize="23dp" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_weight="1"
+                    android:drawableRight="@drawable/ic_phone_in_talk"
+                    android:drawablePadding="3dp"
+                    android:fontFamily="@font/mitr"
+                    android:text="191 "
+                    android:textSize="26dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/trans_white_rectangle"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="1"
+                    android:drawablePadding="5dp"
+                    android:fontFamily="@font/mitr"
+                    android:text="ศูนย์ปราบปรามการโจรกรรมรถ"
+                    android:textSize="23dp" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_weight="1"
+                    android:drawableRight="@drawable/ic_phone_in_talk"
+                    android:drawablePadding="3dp"
+                    android:fontFamily="@font/mitr"
+                    android:text="1192 "
+                    android:textSize="26dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/trans_white_rectangle"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="1"
+                    android:drawablePadding="5dp"
+                    android:fontFamily="@font/mitr"
+                    android:text="ตำรวจท่องเที่ยว"
+                    android:textSize="23dp" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_weight="1"
+                    android:drawableRight="@drawable/ic_phone_in_talk"
+                    android:drawablePadding="3dp"
+                    android:fontFamily="@font/mitr"
+                    android:text="1155  "
+                    android:textSize="26dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/trans_white_rectangle"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="1"
+                    android:drawablePadding="5dp"
+                    android:fontFamily="@font/mitr"
+                    android:text="อุบัติเหตุทางน้ำ"
+                    android:textSize="23dp" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_weight="1"
+                    android:drawableRight="@drawable/ic_phone_in_talk"
+                    android:drawablePadding="3dp"
+                    android:fontFamily="@font/mitr"
+                    android:text="1196"
+                    android:textSize="26dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/trans_white_rectangle"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="1"
+                    android:drawablePadding="5dp"
+                    android:fontFamily="@font/mitr"
+                    android:text="หน่วยแพทย์กู้ชีวิต วชิรพยาบาล"
+                    android:textSize="23dp" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_weight="1"
+                    android:drawableRight="@drawable/ic_phone_in_talk"
+                    android:drawablePadding="3dp"
+                    android:fontFamily="@font/mitr"
+                    android:text="1554"
+                    android:textSize="26dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

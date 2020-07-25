@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginBottom="10dp"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ImViewProfile"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="20dp"
+            app:srcCompat="@drawable/original">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/TV_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="id"
+            android:textSize="18dp"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/TV_EditUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/ic_personn"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/mitr"
+            android:hint="ชื่อผู้ใช้งาน"
+            android:textSize="24dp" />
+
+
+        <EditText
+            android:id="@+id/TV_EditPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:drawableLeft="@drawable/ic_local_phonee"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/mitr"
+            android:hint="เบอร์โทรศัพท์"
+            android:textSize="24dp" />
+        <Button
+            android:id="@+id/btnEditSaveProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="80dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/login_button"
+            android:fontFamily="@font/mitr"
+            android:text="แก้ไข" />
+        <Button
+        android:id="@+id/btnEditConfirmProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/edit_button"
+        android:fontFamily="@font/mitr"
+        android:text="ยกเลิก" />
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
