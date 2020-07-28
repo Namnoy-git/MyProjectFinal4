@@ -30,9 +30,12 @@ interface ServiceAPI {
     @POST("/noti")
     fun doInsertnoti(@Body body: BodyInsertNoti):Observable<ResponseInsertNoti>
 
-    //post เพิ่มข้อมูลตาราง noti
+
     @POST("/uploadmultiple")
     fun doUploadImg(@Body body: BodyImage):Observable<ResponseUploadImage>
+
+    @POST("/uploadimageuser")
+    fun doUploadImgUser(@Body body: BodyImageUser):Observable<ResponseUploadImage>
 
 //    @POST("/regisimage")
 //    fun doUserImg(@Body body: BodyUserImg):Observable<ResponseUploadImage>

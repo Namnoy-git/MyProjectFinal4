@@ -177,6 +177,40 @@ class MainPresenter {
                 })
     }
 
+
+    fun upLoadImageUser(
+        bodyImageuser: BodyImageUser,
+        dataResponse: (ResponseUploadImage) -> Unit,
+        MessageError: (String) -> Unit
+    ) {
+
+        /*  val json: String = Utils().getGson()!!.toJson(bodyImage)
+          Log.d("a9a20as8da", json)*/
+
+        mDisposable =
+            DataModule.myAppService.doUploadImgUser(bodyImageuser)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(object : DisposableObserver<ResponseUploadImage>() {
+                    override fun onComplete() {
+
+                    }
+
+                    override fun onNext(response: ResponseUploadImage) {
+                        Log.d("messageInsertImageuser", response.isSuccessful.toString())
+                        if (response.isSuccessful) {
+                            dataResponse.invoke(response)
+                        } else {
+                            MessageError.invoke("")
+                        }
+                    }
+
+                    override fun onError(e: Throwable) {
+                        Log.d("messageInsertImageuser", e.message!!.toString())
+                        MessageError.invoke(e.message!!)
+                    }
+                })
+    }
     //    fun userImage(
 //        bodyUserImg: BodyUserImg,
 //        dataResponse: (ResponseUploadImage) -> Unit,

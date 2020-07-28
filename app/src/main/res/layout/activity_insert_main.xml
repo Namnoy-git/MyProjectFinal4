@@ -39,6 +39,19 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:layout_width="144dp"-->
+<!--            android:layout_height="141dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            app:cardCornerRadius="50dp">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/more" />-->
+<!--        </androidx.cardview.widget.CardView>-->
+
         <TextView
             android:id="@+id/textView17"
             android:layout_width="0dp"
@@ -149,22 +162,24 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_insert" />
 
-        <ImageView
-            android:id="@+id/header_cover_image"
-            android:layout_width="144dp"
-            android:layout_height="141dp"
-            android:layout_marginStart="86dp"
-            android:layout_marginLeft="86dp"
-            android:layout_marginTop="36dp"
-            android:layout_marginEnd="1dp"
-            android:layout_marginRight="1dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintEnd_toStartOf="@+id/floatingActionButton5"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView17"
-            app:srcCompat="@drawable/ic_account_circle_black_24dp"
-            tools:ignore="VectorDrawableCompat" />
+
+                    <ImageView
+                android:id="@+id/header_cover_image"
+                android:layout_width="144dp"
+                android:layout_height="141dp"
+                android:layout_marginStart="86dp"
+                android:layout_marginLeft="86dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginRight="1dp"
+                android:scaleType="centerCrop"
+
+                app:layout_constraintEnd_toStartOf="@+id/floatingActionButton5"
+                app:layout_constraintHorizontal_bias="0.083"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView17"
+                app:srcCompat="@drawable/ic_account_circle_black_24dp"
+                tools:ignore="VectorDrawableCompat" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

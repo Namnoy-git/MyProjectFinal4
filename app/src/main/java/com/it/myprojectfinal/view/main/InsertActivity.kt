@@ -11,10 +11,12 @@ import android.util.Base64
 import androidx.appcompat.app.AppCompatActivity
 import com.it.myprojectfinal.R
 import com.it.myprojectfinal.model.body.BodyImage
+import com.it.myprojectfinal.model.body.BodyImageUser
 import com.it.myprojectfinal.model.response.ResponseInsert
 import com.it.myprojectfinal.view.login.LoginActivity
 import kotlinx.android.synthetic.main.activity_insert_main.*
 import kotlinx.android.synthetic.main.activity_show_data_noti.*
+import kotlinx.android.synthetic.main.activity_show_data_noti2.*
 import java.io.ByteArrayOutputStream
 import java.io.File
 
@@ -22,8 +24,9 @@ class InsertActivity : AppCompatActivity() {
 
     val REQUEST_CODE = 200
     val mMainPersenter = MainPresenter()
-//    var uploadImage = ArrayList<BodyImage.Data>()
-//    var photos : List<String> = ArrayList()
+    val imageUser = MainPresenter()
+    var uploadImageuser = ArrayList<BodyImageUser.Data>()
+    var photos : List<String> = ArrayList()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_insert_main)
@@ -62,13 +65,28 @@ class InsertActivity : AppCompatActivity() {
 
     private fun setapi() {
         btn_insert.setOnClickListener{
-            mMainPersenter.InsertMainPersenterRx(
-                edt_username.text.toString(),
-                edt_password.text.toString(),
-                edt_phone.text.toString(),
+//            mMainPersenter.InsertMainPersenterRx(
+//                edt_username.text.toString(),
+//                edt_password.text.toString(),
+//                edt_phone.text.toString(),
+//
+//                this::onSuccessSubscribe,
+//                this::onErrorSubscribe)
 
-                this::onSuccessSubscribe,
-                this::onErrorSubscribe)
+            imageUser.upLoadImageUser(
+                BodyImageUser(uploadImageuser),
+
+                {
+                    header_cover_image.setImageURI(null)
+                    uploadImageuser = ArrayList()
+                },
+                {
+
+                }
+
+            )
+
+
         }
 
         cancle.setOnClickListener {
@@ -90,43 +108,45 @@ class InsertActivity : AppCompatActivity() {
             }
 
 //            for (i in photos) {
-//                val file = File(i)
+                val file = File("")
 
-//                if (file.absolutePath != "") {
+                if (file.absolutePath != "") {
 
-//                    //เอารูปมาแปลงเป็น bitmap
-//                    val myBitmap = BitmapFactory.decodeFile(file.absolutePath)
-//                    if (myBitmap != null) {
-//                        val byteArrayOutputStream =
-//                            ByteArrayOutputStream()
-//                        myBitmap.compress(
-//                            Bitmap.CompressFormat.JPEG,
-//                            70,
-//                            byteArrayOutputStream
-//                        )
-//
-//                        //เแปลงรูปจาก bitmap เป็น base 64
-//                        val byteArrayImage =
-//                            byteArrayOutputStream.toByteArray()
-//                        encodedImage = Base64.encodeToString(
-//                            byteArrayImage,
-//                            Base64.DEFAULT
-//                        )
-//                        val bodyImage =
-//                            BodyImage.Data(file.name, "data:image/jpeg;base64,$encodedImage")
-//
-//                        // val json: String = Utils().getGson()!!.toJson(bodyImage)
-//                        //Log.d("ShowDataNoti2 : json ",json)
-//
-//                        uploadImage.add(bodyImage)
-//                    }
-//                }
+                    //เอารูปมาแปลงเป็น bitmap
+                    val myBitmap = BitmapFactory.decodeFile(file.absolutePath)
+                    if (myBitmap != null) {
+                        val byteArrayOutputStream =
+                            ByteArrayOutputStream()
+                        myBitmap.compress(
+                            Bitmap.CompressFormat.JPEG,
+                            70,
+                            byteArrayOutputStream
+                        )
+
+                        //เแปลงรูปจาก bitmap เป็น base 64
+                        val byteArrayImage =
+                            byteArrayOutputStream.toByteArray()
+                        encodedImage = Base64.encodeToString(
+                            byteArrayImage,
+                            Base64.DEFAULT
+                        )
+                        val bodyImageuser =
+                            BodyImageUser.Data(file.name, "data:image/jpeg;base64,$encodedImage")
+
+                        // val json: String = Utils().getGson()!!.toJson(bodyImage)
+                        //Log.d("ShowDataNoti2 : json ",json)
+
+                        uploadImageuser.add(bodyImageuser)
+                    }
+                }
 //            }
-//        }
+
             }
         }
     
         private fun onSuccessSubscribe(responseData: ResponseInsert) {
+
+
             val i = Intent(this, LoginActivity::class.java)
             startActivity(i)
 
