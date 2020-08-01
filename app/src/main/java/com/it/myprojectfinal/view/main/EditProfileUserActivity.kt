@@ -19,12 +19,19 @@ class EditProfileUserActivity : AppCompatActivity() {
         setApi()
 
         mPreferrences.getUserId() ?: ""
+        val name = intent.getStringExtra("name")
         val username = intent.getStringExtra("username")
+        val password = intent.getStringExtra("password")
+        val email = intent.getStringExtra("email")
+        val address = intent.getStringExtra("address")
         val phone = intent.getStringExtra("phone")
 
+        TV_EditName.setText(name)
         TV_EditUsername.setText(username)
+        TV_EditPassword.setText(password)
+        TV_EditEmail.setText(email)
+        TV_EditAddress.setText(address)
         TV_EditPhone.setText(phone)
-
 
         btnEditConfirmProfile.setOnClickListener {
             val i = Intent(this,ProfileUserActivity::class.java)
@@ -36,7 +43,11 @@ class EditProfileUserActivity : AppCompatActivity() {
         btnEditSaveProfile.setOnClickListener {
         updeteProfile.UpdateUserPersenterRx(
             mPreferrences.getUserId() ?: "",
+            TV_EditName.text.toString(),
             TV_EditUsername.text.toString(),
+            TV_EditPassword.text.toString(),
+            TV_EditEmail.text.toString(),
+            TV_EditAddress.text.toString(),
             TV_EditPhone.text.toString(),
 
             { profile ->

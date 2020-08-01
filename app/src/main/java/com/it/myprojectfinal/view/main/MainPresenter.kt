@@ -1,5 +1,9 @@
 package com.it.myprojectfinal.view.main
 
+import android.annotation.SuppressLint
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.util.Base64
 import android.util.Log
 import com.it.myprojectfinal.model.body.*
 import com.it.myprojectfinal.model.response.*
@@ -9,6 +13,9 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.observers.DisposableObserver
 import io.reactivex.schedulers.Schedulers
+import java.io.ByteArrayOutputStream
+import java.io.File
+import java.util.concurrent.TimeUnit
 
 class MainPresenter {
 
@@ -57,12 +64,12 @@ class MainPresenter {
 
     //Rx Insert user
     fun InsertMainPersenterRx(
-        user_username: String, user_password: String, phone: String,
+        name: String, user_username: String, user_password: String,email: String,address: String, phone: String,
         dataResponse: (ResponseInsert) -> Unit,
         MessageError: (String) -> Unit
     ) {
         mDisposable =
-            DataModule.myAppService.doInsert(BodyInsert(user_username, user_password, phone))
+            DataModule.myAppService.doInsert(BodyInsert(name,user_username, user_password,email,address, phone))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object : DisposableObserver<ResponseInsert>() {
@@ -211,6 +218,7 @@ class MainPresenter {
                     }
                 })
     }
+
     //    fun userImage(
 //        bodyUserImg: BodyUserImg,
 //        dataResponse: (ResponseUploadImage) -> Unit,
@@ -244,12 +252,21 @@ class MainPresenter {
 //                })
 //    }
     fun UpdateUserPersenterRx(
-        userId: String, username: String, phone: String,
+        userId: String,
+        name: String,
+        username: String,
+        password: String,
+        email: String,
+        address: String,
+        phone: String,
         datarResponse: (ResponseProfile) -> Unit,
         MessageError: (String) -> Unit
     ) {
         mDisposable =
-            DataModule.myAppService.doUpdateuser(userId,BodyUpdateUser(username,phone))
+            DataModule.myAppService.doUpdateuser(
+                userId,
+                BodyUpdateUser(name, username, password, email, address, phone)
+            )
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object : DisposableObserver<ResponseProfile>() {
@@ -271,4 +288,83 @@ class MainPresenter {
                 })
 
     }
+
+    @SuppressLint("CheckResult")
+    fun upLoadUserImage(
+        user_name: String,
+        username: String,
+        password: String,
+        email: String,
+        address: String,
+        phone: String,
+        file: File,
+
+        res: (Boolean) -> Unit
+    ) {
+        val encodedImagePic1: String
+        val uploadImage = ArrayList<BodyImageUser.Data>()
+
+        if (file.absolutePath != "") {
+            val myBitmap = BitmapFactory.decodeFile(file.absolutePath)
+
+            if (myBitmap != null) {
+                Log.d("ASd6asd", myBitmap.toString())
+                val byteArrayOutputStream =
+                    ByteArrayOutputStream()
+                myBitmap.compress(
+                    Bitmap.CompressFormat.JPEG,
+                    70,
+                    byteArrayOutputStream
+                )
+                val byteArrayImage =
+                    byteArrayOutputStream.toByteArray()
+                encodedImagePic1 = Base64.encodeToString(
+                    byteArrayImage,
+                    Base64.DEFAULT
+                )
+
+                val uploadData = BodyImageUser.Data(
+                    user_name,
+                    username,
+                    password,
+                    email,
+                    address,
+                    phone,
+                    file.name,
+                    "data:image/jpeg;base64,$encodedImagePic1"
+                )
+                uploadImage.add(uploadData)
+            }
+            /*      val json: String = Utils().getGson()!!.toJson(uploadImage)
+            Log.d("a9a20as8da", json)*/
+        }
+        mDisposable =
+            DataModule.myAppService.doUploadImgUser(BodyImageUser(uploadImage))
+            .subscribeOn(Schedulers.io())
+            .timeout(20, TimeUnit.SECONDS)
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeWith(object : DisposableObserver<ResponseUploadImage>() {
+                override fun onComplete() {
+
+                }
+
+                override fun onNext(t: ResponseUploadImage) {
+                    if (t.isSuccessful) {
+                        res.invoke(true)
+                        Log.d("As85das1d", t.message)
+                    } else {
+                        res.invoke(false)
+                    }
+                }
+
+                @SuppressLint("DefaultLocale")
+                override fun onError(e: Throwable) {
+                    res.invoke(false)
+
+                }
+            })
+
+
+    }
 }
+

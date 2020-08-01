@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<ScrollView
+    android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="20dp"
-    android:layout_marginTop="10dp"
-    android:layout_marginStart="10dp"
-    android:layout_marginEnd="10dp"
-    android:layout_marginBottom="10dp"
+    android:background="@drawable/blue"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/trans_white_rectangle"
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="220dp"
-            android:layout_height="200dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_marginBottom="20dp"
             android:layout_marginTop="30dp"
             app:cardCornerRadius="100dp"
@@ -28,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/ic_person">
+                app:srcCompat="@drawable/original">
 
             </ImageView>
         </androidx.cardview.widget.CardView>
@@ -39,37 +41,98 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="id"
-            android:textSize="18dp"
+            android:textSize="20dp"
             android:visibility="gone" />
-
         <TextView
-            android:id="@+id/TV_Username"
+            android:id="@+id/TV_Name"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="10dp"
-            android:drawableLeft="@drawable/ic_personn"
+            android:drawableLeft="@drawable/ic_face"
             android:drawablePadding="10dp"
+            android:paddingTop="10dp"
             android:fontFamily="@font/mitr"
-            android:text="ชื่อผู้ใช้งาน"
-            android:textSize="24dp" />
-
-
+            android:text="ชื่อ-สกุล"
+            android:textSize="20dp" />
         <TextView
-            android:id="@+id/TV_phone"
+            android:id="@+id/TV_Username"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/ic_personn"
+            android:drawablePadding="10dp"
+            android:paddingTop="10dp"
+            android:fontFamily="@font/mitr"
+            android:text="ชื่อผู้ใช้งาน"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/TV_Password"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/ic_lock"
+            android:drawablePadding="10dp"
+            android:paddingTop="10dp"
+            android:fontFamily="@font/mitr"
+            android:text="รหัสผ่าน"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/TV_Email"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/ic_email"
+            android:drawablePadding="10dp"
+            android:paddingTop="10dp"
+            android:fontFamily="@font/mitr"
+            android:text="อีเมล"
+            android:textSize="20dp" />
+
+
+        <TextView
+            android:id="@+id/TV_Address"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/ic_home"
+            android:drawablePadding="10dp"
+            android:paddingTop="10dp"
+            android:fontFamily="@font/mitr"
+            android:text="ที่อยู่"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/TV_Phone"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="10dp"
             android:drawableLeft="@drawable/ic_local_phonee"
             android:drawablePadding="10dp"
             android:fontFamily="@font/mitr"
             android:text="เบอร์โทรศัพท์"
-            android:textSize="24dp" />
+            android:paddingTop="10dp"
+            android:textSize="20dp" />
+
 
         <Button
             android:id="@+id/btnEditProfile"
@@ -78,10 +141,10 @@
             android:layout_marginLeft="80dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="80dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="30dp"
+            android:textSize="24dp"
             android:background="@drawable/edit_button"
             android:fontFamily="@font/mitr"
             android:text="แก้ไข" />
     </LinearLayout>
-
-</androidx.cardview.widget.CardView>
+</ScrollView>

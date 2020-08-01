@@ -25,9 +25,12 @@ class ProfileUserActivity : AppCompatActivity() {
             val i = Intent(this, EditProfileUserActivity::class.java)
 
             mPreferrences.getUserId() ?: ""
+            i.putExtra("name", TV_Name.text.toString())
             i.putExtra("username", TV_Username.text.toString())
-            i.putExtra("phone", TV_phone.text.toString())
-
+            i.putExtra("password", TV_Password.text.toString())
+            i.putExtra("email", TV_Email.text.toString())
+            i.putExtra("address", TV_Address.text.toString())
+            i.putExtra("phone", TV_Phone.text.toString())
 
 
             startActivity(i)
@@ -39,8 +42,12 @@ class ProfileUserActivity : AppCompatActivity() {
         selectProfile.SelectUser(
             mPreferrences.getUserId() ?: "",
             { profile ->
+                TV_Name.text = profile.message.user_name
                 TV_Username.text = profile.message.user_username
-                TV_phone.text = profile.message.user_phone
+                TV_Password.text = profile.message.user_password
+                TV_Email.text = profile.message.user_email
+                TV_Address.text = profile.message.user_address
+                TV_Phone.text = profile.message.user_phone
             }, {
             })
 

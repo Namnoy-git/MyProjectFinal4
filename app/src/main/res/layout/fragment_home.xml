@@ -5,23 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/blue"
     android:gravity="center"
     tools:context=".view.main.MainActivity">
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="148dp"
+        android:layout_height="126dp"
         android:orientation="horizontal">
 
 
         <ImageView
             android:id="@+id/imageView5"
-            android:layout_width="146dp"
+            android:layout_width="wrap_content"
             android:layout_height="129dp"
             android:layout_marginTop="5dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/abc_vector_test" />
+            app:srcCompat="@drawable/original" />
 
         <TextView
             android:id="@+id/Tv_Uname"
@@ -41,7 +42,6 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

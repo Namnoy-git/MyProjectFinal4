@@ -57,7 +57,7 @@ class AdapterDataNoti(
         holder.topic.text = notiData[position].notic_topic
         holder.detail.text = notiData[position].notic_detail
         holder.status.text = notiData[position].notic_status
-
+        holder.time.text = notiData[position].notic_time
 
         holder.itemView.setOnClickListener {
             mInvork.invoke(
@@ -102,6 +102,7 @@ class AdapterDataNoti(
         val topic: TextView = itemsView.findViewById<TextView>(R.id.TV_topic)
         val detail: TextView = itemsView.findViewById<TextView>(R.id.TV_detail)
         val status: TextView = itemsView.findViewById<TextView>(R.id.TV_status)
+        val time: TextView = itemsView.findViewById<TextView>(R.id.TV_Time)
         val imagDetail: ImageView = itemsView.findViewById<ImageView>(R.id.ImView)
 
 

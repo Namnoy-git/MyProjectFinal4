@@ -63,7 +63,7 @@ class HomeFragment : Fragment() {
 
             userID,
             {
-                Tv_Uname.text = it.message.user_username
+                Tv_Uname.text = it.message.user_name
             },
             {
 

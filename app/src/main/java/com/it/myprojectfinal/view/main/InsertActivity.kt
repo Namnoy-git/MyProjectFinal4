@@ -2,12 +2,17 @@ package com.it.myprojectfinal.view.main
 
 import android.app.Activity
 import android.content.Intent
+import android.database.Cursor
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Base64
+import android.util.Log
+import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.it.myprojectfinal.R
 import com.it.myprojectfinal.model.body.BodyImage
@@ -19,9 +24,16 @@ import kotlinx.android.synthetic.main.activity_show_data_noti.*
 import kotlinx.android.synthetic.main.activity_show_data_noti2.*
 import java.io.ByteArrayOutputStream
 import java.io.File
+import java.lang.Exception
+import com.squareup.picasso.Picasso
+import java.lang.reflect.Array.get
+import java.nio.file.Paths.get
 
 class InsertActivity : AppCompatActivity() {
 
+    private lateinit var header_cover_image: ImageView
+    private lateinit var imageName: File
+    private val PICK_IMAGE = 1001
     val REQUEST_CODE = 200
     val mMainPersenter = MainPresenter()
     val imageUser = MainPresenter()
@@ -34,57 +46,33 @@ class InsertActivity : AppCompatActivity() {
 
 
     floatingActionButton5.setOnClickListener {
-            openGalleryForImages()
+        val i = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        startActivityForResult(i, PICK_IMAGE)
         }
 
 
     }
 
 
-    private fun openGalleryForImages() {
 
-        if (Build.VERSION.SDK_INT < 19) {
-            var intent = Intent()
-            intent.type = "image/*"
-            intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
-            intent.action = Intent.ACTION_GET_CONTENT
-            startActivityForResult(
-                Intent.createChooser(intent, "Choose Pictures")
-                , REQUEST_CODE
-            )
-        }
-        else { // For latest versions API LEVEL 19+
-            var intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
-            intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
-            intent.addCategory(Intent.CATEGORY_OPENABLE)
-            intent.type = "image/*"
-            startActivityForResult(intent, REQUEST_CODE);
-        }
-
-    }
 
     private fun setapi() {
         btn_insert.setOnClickListener{
-//            mMainPersenter.InsertMainPersenterRx(
-//                edt_username.text.toString(),
-//                edt_password.text.toString(),
-//                edt_phone.text.toString(),
-//
-//                this::onSuccessSubscribe,
-//                this::onErrorSubscribe)
-
-            imageUser.upLoadImageUser(
-                BodyImageUser(uploadImageuser),
+            mMainPersenter.InsertMainPersenterRx(
+                edt_name.text.toString(),
+                edt_username.text.toString(),
+                edt_password.text.toString(),
+                edt_email.text.toString(),
+                edt_address.text.toString(),
+                edt_phone.text.toString(),
 
                 {
-                    header_cover_image.setImageURI(null)
-                    uploadImageuser = ArrayList()
+                    val i = Intent(this,LoginActivity::class.java)
+                    startActivity(i)
                 },
                 {
 
-                }
-
-            )
+                })
 
 
         }
@@ -97,62 +85,33 @@ class InsertActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        var encodedImage: String
-        if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE) {
+        Log.d("As6dasd", "1")
+        if (PICK_IMAGE == requestCode && resultCode == Activity.RESULT_OK) {
 
-            // if multiple images are selected
-            if (data?.getData() != null) {
-                var imageUri: Uri? = data.data
-                header_cover_image.setImageURI(imageUri)
+            try {
+                val pickedImage: Uri = data?.data!!
 
+                val filePath = arrayOf(MediaStore.Images.Media.DATA)
+                val cursor: Cursor =
+                    this.contentResolver.query(pickedImage, filePath, null, null, null)!!
+                cursor.moveToFirst()
+                val imagePath: String = cursor.getString(cursor.getColumnIndex(filePath[0]))
+                val options = BitmapFactory.Options()
+                options.inPreferredConfig = Bitmap.Config.ARGB_8888
+                val bitmap = BitmapFactory.decodeFile(imagePath, options)
+
+                Log.d("As5da1sda",File(imagePath).absolutePath )
+                imageName = File(imagePath)
+
+                Picasso.get().load(imageName).into(header_cover_image)
+
+            }catch (e: Exception){
+                e.printStackTrace()
             }
 
-//            for (i in photos) {
-                val file = File("")
+            // addImageQRCode.setImageBitmap(bitmap)
 
-                if (file.absolutePath != "") {
-
-                    //เอารูปมาแปลงเป็น bitmap
-                    val myBitmap = BitmapFactory.decodeFile(file.absolutePath)
-                    if (myBitmap != null) {
-                        val byteArrayOutputStream =
-                            ByteArrayOutputStream()
-                        myBitmap.compress(
-                            Bitmap.CompressFormat.JPEG,
-                            70,
-                            byteArrayOutputStream
-                        )
-
-                        //เแปลงรูปจาก bitmap เป็น base 64
-                        val byteArrayImage =
-                            byteArrayOutputStream.toByteArray()
-                        encodedImage = Base64.encodeToString(
-                            byteArrayImage,
-                            Base64.DEFAULT
-                        )
-                        val bodyImageuser =
-                            BodyImageUser.Data(file.name, "data:image/jpeg;base64,$encodedImage")
-
-                        // val json: String = Utils().getGson()!!.toJson(bodyImage)
-                        //Log.d("ShowDataNoti2 : json ",json)
-
-                        uploadImageuser.add(bodyImageuser)
-                    }
-                }
-//            }
-
-            }
-        }
-    
-        private fun onSuccessSubscribe(responseData: ResponseInsert) {
-
-
-            val i = Intent(this, LoginActivity::class.java)
-            startActivity(i)
 
         }
-
-        private fun onErrorSubscribe(message: String) {
-
-        }
+    }
     }

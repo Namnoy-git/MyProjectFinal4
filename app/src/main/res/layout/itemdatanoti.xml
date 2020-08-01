@@ -1,44 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    app:cardCornerRadius="20dp"
-    android:layout_marginTop="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginStart="10dp"
+    android:layout_marginTop="10dp"
     android:layout_marginEnd="10dp"
     android:layout_marginBottom="10dp"
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent">
+    app:cardCornerRadius="20dp">
 
 
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/TV_topic"
-            android:layout_width="107dp"
-            android:layout_height="22dp"
-            android:layout_marginTop="64dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginRight="24dp"
-            android:text="TextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/TV_detail"
-            android:layout_width="128dp"
-            android:layout_height="75dp"
-            android:layout_marginTop="104dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:text="TextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/ImView"
@@ -46,24 +22,97 @@
             android:layout_height="118dp"
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginTop="20dp"
             android:background="#009688"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
         </ImageView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="137dp"
+        android:layout_marginLeft="150dp"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/TV_status"
-            android:layout_width="223dp"
-            android:layout_height="32dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="92dp"
-            android:layout_marginRight="92dp"
-            android:hint="สถานะ"
-            android:text="สถานะ"
+            android:id="@+id/TV_Time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="5dp"
+
+            android:fontFamily="@font/mitr_semibold"
+            android:hint="เวลา"
+            android:textSize="14dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ImView" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <TextView
+            android:id="@+id/TV_topic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
+            android:fontFamily="@font/mitr_semibold"
+            android:text="หัวข้อการแจ้งเหตุ"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="144dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/TV_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/mitr"
+            android:text="รายละเอียกการแจ้งเหตุ"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/TV_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/mitr_semibold"
+                android:hint="สถานะ :"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ImView" />
+
+            <TextView
+                android:id="@+id/TV_Detailstatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/mitr_semibold"
+                android:hint="อยู่ระหว่างดำเนินการ"
+                android:textColor="#FF4500"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ImView" />
+
+        </LinearLayout>
+    </LinearLayout>
 </androidx.cardview.widget.CardView>
