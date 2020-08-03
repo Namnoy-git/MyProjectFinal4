@@ -6,31 +6,31 @@ data class BodyImageUser(var data: ArrayList<Data>) {
 
 
         user_name : String,
-        username : String,
-        password : String,
-        email : String,
-        address : String,
-        phone : String,
+        user_username : String,
+        user_password : String,
+        user_email : String,
+        user_address : String,
+        user_phone : String,
         name: String,
         img: String
     ) {
 
         var user_name = ""
-        var username = ""
-        var password = ""
-        var email = ""
-        var address = ""
-        var phone = ""
+        var user_username = ""
+        var user_password = ""
+        var user_email = ""
+        var user_address = ""
+        var user_phone = ""
         var name = ""
         var img = ""
 
         init {
             this.user_name = user_name
-            this.username = username
-            this.password = password
-            this.email = email
-            this.address = address
-            this.phone = phone
+            this.user_username = user_username
+            this.user_password = user_password
+            this.user_email = user_email
+            this.user_address = user_address
+            this.user_phone = user_phone
             this.name = name
             this.img = img
         }

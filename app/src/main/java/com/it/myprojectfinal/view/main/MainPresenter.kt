@@ -37,7 +37,10 @@ class MainPresenter {
                     hashMap["type"].toString(),
                     hashMap["level"].toString(),
                     hashMap["detail"].toString(),
-                    hashMap["location"].toString()
+                    hashMap["location"].toString(),
+                    hashMap["lat"].toString(),
+                    hashMap["long"].toString()
+
                 )
             )
                 .subscribeOn(Schedulers.io())
@@ -292,11 +295,11 @@ class MainPresenter {
     @SuppressLint("CheckResult")
     fun upLoadUserImage(
         user_name: String,
-        username: String,
-        password: String,
-        email: String,
-        address: String,
-        phone: String,
+        user_username: String,
+        user_password: String,
+        user_email: String,
+        user_address: String,
+        user_phone: String,
         file: File,
 
         res: (Boolean) -> Unit
@@ -325,11 +328,11 @@ class MainPresenter {
 
                 val uploadData = BodyImageUser.Data(
                     user_name,
-                    username,
-                    password,
-                    email,
-                    address,
-                    phone,
+                    user_username,
+                    user_password,
+                    user_email,
+                    user_address,
+                    user_phone,
                     file.name,
                     "data:image/jpeg;base64,$encodedImagePic1"
                 )

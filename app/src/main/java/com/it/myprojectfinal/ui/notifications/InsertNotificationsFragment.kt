@@ -20,11 +20,14 @@ import android.widget.SpinnerAdapter
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
+import com.google.android.gms.maps.model.MarkerOptions
 import com.it.myprojectfinal.R
 import com.it.myprojectfinal.model.response.ResponseInsertNoti
 import com.it.myprojectfinal.rest.local.Preferrences.Companion.FILENAME
@@ -149,6 +152,7 @@ class InsertNotificationsFragment : Fragment(), OnMapReadyCallback {
         }
         mMapView!!.onCreate(mapViewBundle)
         mMapView!!.getMapAsync(this)
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(context as Activity)
     }
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
@@ -199,17 +203,45 @@ class InsertNotificationsFragment : Fragment(), OnMapReadyCallback {
         }
         map.isMyLocationEnabled = true
 
-//        fusedLocationClient.lastLocation.addOnSuccessListener(context as Activity) { location ->
-//            if (location != null) {
-//                lastLocation = location
-//                //ดึง lat long  ออกมาจากตำแหน่งปัจุบัน กรณีที่ผูู้แจ้งอยู่ตรงงงที่เกิดเหตุ
-//                lat = location.latitude.toString()
-//                long = location.longitude.toString()
-//                // lat long มันจะถูกเก็บไว้ในตัวแปร ที่นี่เวลาเอาลง database ก็ เอา lat  long ลง
-//                val currentLatLng = LatLng(location.latitude, location.longitude)
-//                map.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 15f))
-//            }
-//        }
+        fusedLocationClient.lastLocation.addOnSuccessListener(context as Activity) { location ->
+            if (location != null) {
+                lastLocation = location
+                //ดึง lat long  ออกมาจากตำแหน่งปัจุบัน กรณีที่ผูู้แจ้งอยู่ตรงงงที่เกิดเหตุ
+                lat = location.latitude.toString()
+                long = location.longitude.toString()
+                // lat long มันจะถูกเก็บไว้ในตัวแปร ที่นี่เวลาเอาลง database ก็ เอา lat  long ลง
+                val currentLatLng = LatLng(location.latitude, location.longitude)
+                map.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 15f))
+            }
+        }
+
+        map.uiSettings.isZoomControlsEnabled = true
+        map.setOnMapClickListener(object :GoogleMap.OnMapClickListener{
+            override fun onMapClick(p0: LatLng) {
+                //กดเลือกปักหมุด
+                map.addMarker(
+                    MarkerOptions().position(p0).title(
+                    p0.latitude.toString()+","+p0.longitude.toString()
+                ))
+                //ตรงนี้ เด้อ  5555 มันวิธีเดียวกันแต่เขียนไม่เหมือนกัน 555+
+                lat  = p0.latitude.toString()
+                long = p0.longitude.toString()
+                object :GoogleMap.OnMarkerClickListener{
+                    override fun onMarkerClick(p0: Marker?): Boolean {
+                        p0!!.remove()
+                        return true
+                    }
+
+                }
+            }
+
+        })
+        map.setOnMarkerClickListener(object :GoogleMap.OnMarkerClickListener{
+            override fun onMarkerClick(p0: Marker?): Boolean {
+                p0!!.remove()
+                return true
+            }
+        })
     }
     override fun onPause() {
         mMapView!!.onPause()
@@ -236,6 +268,8 @@ class InsertNotificationsFragment : Fragment(), OnMapReadyCallback {
                 spinner_leval.selectedItem.toString(),
                 edit_detail.text.toString(),
                 edit_location.text.toString(),
+                lat,
+                long,
 //                edit5.text.toString()
 //                edit8.text.toString()
 //                edit9.text.toString()

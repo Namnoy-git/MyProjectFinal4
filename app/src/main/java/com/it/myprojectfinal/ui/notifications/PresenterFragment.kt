@@ -24,6 +24,8 @@ class PresenterFragment : Fragment() {
         notic_location: String,
         notic_type: String,
         notic_voilent: String,
+        notic_lat : String,
+        notic_long :String,
         dataResponse: (ResponseInsertNoti) -> Unit,
         MessageError: (String) -> Unit
     ) {
@@ -35,7 +37,9 @@ class PresenterFragment : Fragment() {
                     notic_detail,
                     notic_location,
                     notic_type,
-                    notic_voilent
+                    notic_voilent,
+                    notic_lat,
+                    notic_long
                 )
             )
                 .subscribeOn(Schedulers.io())

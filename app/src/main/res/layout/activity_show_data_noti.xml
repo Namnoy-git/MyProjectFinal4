@@ -44,7 +44,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="210dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="50dp"
                 app:srcCompat="@drawable/view" />
 
             <TextView
@@ -183,54 +183,9 @@
                 android:fontFamily="@font/mitr"
                 android:layout_marginLeft="50dp"
                 android:hint="แสดงรายละเอียดการช่วยเหลือ"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="match_parent"
-                android:layout_height="33dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:drawableLeft="@drawable/ic_border_color"
-                android:drawablePadding="5dp"
-                android:fontFamily="@font/mitr"
-                android:text="ละติจูด"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/Showlatijud"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/mitr"
-                android:layout_marginLeft="50dp"
-                android:hint="แสดงรายละเอียดละติจูด"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="match_parent"
-                android:layout_height="33dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:drawableLeft="@drawable/ic_border_color"
-                android:drawablePadding="5dp"
-                android:fontFamily="@font/mitr"
-                android:text="ลองติจูด"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/Showlongtijud"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/mitr"
-                android:layout_marginLeft="50dp"
-                android:hint="แสดงรายละเอียดลองติจูด"
                 android:layout_marginBottom="50dp"
                 android:textSize="16sp" />
+
 
         </LinearLayout>
 

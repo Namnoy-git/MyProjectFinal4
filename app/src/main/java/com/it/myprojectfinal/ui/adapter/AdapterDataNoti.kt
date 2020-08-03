@@ -15,6 +15,7 @@ import com.it.myprojectfinal.R
 
 import com.it.myprojectfinal.model.response.DataList
 import com.it.myprojectfinal.model.response.ResponseProfileBody
+import com.it.myprojectfinal.rest.BaseUrl
 import com.it.myprojectfinal.view.main.DeleteMainActivity
 import java.io.File
 
@@ -45,14 +46,14 @@ class AdapterDataNoti(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        var flie = File("file:///C:/Users/Namnoy/Desktop/uploads/")
-//        Glide.with(holder.itemView)
-//            .load("https://www.photoschoolthailand.com/wp-content/uploads/2019/09/rule-of-third-1.jpg")
-////            .load("$BaseUrl/uploads/${"Screenshot_2020-06-19-14-05-54.png"}")
-////            .load(flie)
-////            .placeholder(R.drawable.blue)
-//            .into(holder.imagDetail)
-        val bitmap = BitmapFactory.decodeFile(flie.absolutePath)
+//        var flie = File("https://www.photoschoolthailand.com/wp-content/uploads/2019/09/rule-of-third-1.jpg")
+        Glide.with(holder.itemView)
+            .load("http://192.168.1.5:4000/uploads/Screenshot_20200717-143414.png")
+//            .load("$BaseUrl http://192.168.1.5:4000/uploads/Screenshot_20200717-143414.png")
+//            .load(flie)
+
+            .into(holder.imagDetail)
+        val bitmap = BitmapFactory.decodeFile("")
         holder.imagDetail.setImageBitmap(bitmap)
         holder.topic.text = notiData[position].notic_topic
         holder.detail.text = notiData[position].notic_detail
@@ -101,7 +102,7 @@ class AdapterDataNoti(
 
         val topic: TextView = itemsView.findViewById<TextView>(R.id.TV_topic)
         val detail: TextView = itemsView.findViewById<TextView>(R.id.TV_detail)
-        val status: TextView = itemsView.findViewById<TextView>(R.id.TV_status)
+        val status: TextView = itemsView.findViewById<TextView>(R.id.TV_Detailstatus)
         val time: TextView = itemsView.findViewById<TextView>(R.id.TV_Time)
         val imagDetail: ImageView = itemsView.findViewById<ImageView>(R.id.ImView)
 

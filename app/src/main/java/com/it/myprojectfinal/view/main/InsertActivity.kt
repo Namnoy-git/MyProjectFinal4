@@ -31,7 +31,7 @@ import java.nio.file.Paths.get
 
 class InsertActivity : AppCompatActivity() {
 
-    private lateinit var header_cover_image: ImageView
+//    private lateinit var header_cover_image: ImageView
     private lateinit var imageName: File
     private val PICK_IMAGE = 1001
     val REQUEST_CODE = 200
@@ -57,29 +57,33 @@ class InsertActivity : AppCompatActivity() {
 
 
     private fun setapi() {
-        btn_insert.setOnClickListener{
-            mMainPersenter.InsertMainPersenterRx(
+        btn_insert.setOnClickListener {
+            mMainPersenter.upLoadUserImage(
                 edt_name.text.toString(),
                 edt_username.text.toString(),
                 edt_password.text.toString(),
                 edt_email.text.toString(),
                 edt_address.text.toString(),
                 edt_phone.text.toString(),
+                imageName
 
-                {
-                    val i = Intent(this,LoginActivity::class.java)
+            ) {
+                if (it) {
+                    val i = Intent(this, LoginActivity::class.java)
                     startActivity(i)
-                },
-                {
 
-                })
+                } else {
+                    Toast.makeText(this, "พบข้อผิดพลาด!", Toast.LENGTH_SHORT).show()
+
+                }
 
 
-        }
+            }
 
-        cancle.setOnClickListener {
-            val intent = Intent(this,LoginActivity::class.java)
-            startActivity(intent)
+            cancle.setOnClickListener {
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 
