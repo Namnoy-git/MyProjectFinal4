@@ -19,8 +19,10 @@ import com.it.myprojectfinal.ui.adapter.AdapterDataNoti
 import com.it.myprojectfinal.ui.notifications.PresenterFragment
 import com.it.myprojectfinal.view.main.MainPresenter
 import com.it.myprojectfinal.view.main.ShowDataNoti
+import kotlinx.android.synthetic.main.activity_show_data_noti.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
+import kotlinx.android.synthetic.main.itemdatanoti.*
 
 class HomeFragment : Fragment() {
 
@@ -74,14 +76,16 @@ class HomeFragment : Fragment() {
 
     private fun setadapter(view: View) {
         notiAdapterData =
-            AdapterDataNoti(requireContext(), nResponsenoti) { notic_topic, notic_detail,
-                                                               notic_type, notic_voilent, notic_location, notic_status, notic_steps, notic_lat, notic_long, notic_time ->
+            AdapterDataNoti(requireContext(), nResponsenoti) { notic_id, notic_topic, notic_detail,
+                                                               notic_type, notic_voilent, notic_amphur,notic_tambon, notic_status, notic_steps, notic_lat, notic_long, notic_time ->
                 val i = Intent(context, ShowDataNoti::class.java)
+                i.putExtra("notic_id", notic_id)
                 i.putExtra("notic_topic", notic_topic)
                 i.putExtra("notic_detail", notic_detail)
                 i.putExtra("notic_type", notic_type)
                 i.putExtra("notic_voilent", notic_voilent)
-                i.putExtra("notic_location", notic_location)
+                i.putExtra("notic_amphur", notic_amphur)
+                i.putExtra("notic_tambon", notic_tambon)
                 i.putExtra("notic_status", notic_status)
                 i.putExtra("notic_steps", notic_steps)
                 i.putExtra("notic_lat", notic_lat)
@@ -115,6 +119,7 @@ class HomeFragment : Fragment() {
             nResponsenoti.add(response.data[i])
         }
         notiAdapterData.Updatedata(nResponsenoti)
+
     }
 
     private fun onErrorSub(message: String) {

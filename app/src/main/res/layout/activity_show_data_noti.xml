@@ -9,43 +9,95 @@
     tools:context=".view.main.ShowDataNoti"
     android:orientation="vertical">
 
-    <LinearLayout
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="56dp">
 
-        <TextView
-            android:id="@+id/Showtopic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/mitr"
-            android:hint="หัวข้อการแจ้งเหตุ"
-            android:layout_gravity="center"
-            android:textStyle="bold"
-            android:textSize="24sp" />
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
+            <ImageButton
+                android:id="@+id/btn_back_detall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:background="#00FFFFFF"
+                android:src="@drawable/abc_vector_test"
+                android:tint="#F3EFEF" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:text="รายละเอียด"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginTop="70dp"
-            android:layout_gravity="center"
             android:background="@drawable/trans_white_rectangle"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imageView"
+
+            <TextView
+                android:id="@+id/Showtopic"
                 android:layout_width="fill_parent"
-                android:layout_height="210dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="50dp"
-                app:srcCompat="@drawable/view" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/mitr"
+                android:gravity="center"
+                android:hint="หัวข้อการแจ้งเหตุ"
+                android:textStyle="bold"
+                android:textSize="24sp" />
+//
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewpager_Show"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </androidx.viewpager.widget.ViewPager>
+
+            <com.viewpagerindicator.CirclePageIndicator
+                android:id="@+id/indicator"
+                android:layout_width="fill_parent"
+                android:layout_height="23dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="bottom"
+                android:padding="10dip"
+                app:centered="true"
+                app:fillColor="#1060E6"
+                app:pageColor="#65DEEA"
+                app:snap="false"
+                app:strokeColor="#6FDFEA" />
+
 
             <TextView
                 android:id="@+id/textView"
@@ -112,6 +164,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
                 android:fontFamily="@font/mitr"
                 android:hint="รายละเอียดการแจ้งเหตุ"
                 android:textSize="16sp" />
@@ -131,12 +184,22 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/Showlacation"
+                android:id="@+id/Show_amphur"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
                 android:fontFamily="@font/mitr"
-                android:hint="เหตุเกิดที่ใด"
+                android:hint="อำเภอ"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/Show_tambon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="@font/mitr"
+                android:hint="ตำบล"
                 android:textSize="16sp" />
 
             <TextView

@@ -22,48 +22,48 @@ class MainPresenter {
     var mDisposable: Disposable? = null
 
 
-    fun InsertNotiMainPersenterRx(
-        hashMap: HashMap<String, String>,
-        dataResponse: (ResponseInsertNoti?, String) -> Unit
-        //  MessageError: (String) -> Unit
-    ) {
-
-
-        mDisposable =
-            DataModule.myAppService.doInsertnoti(
-                BodyInsertNoti(
-                    hashMap["userID"].toString(),
-                    hashMap["topic"].toString(),
-                    hashMap["type"].toString(),
-                    hashMap["level"].toString(),
-                    hashMap["detail"].toString(),
-                    hashMap["location"].toString(),
-                    hashMap["lat"].toString(),
-                    hashMap["long"].toString()
-
-                )
-            )
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeWith(object : DisposableObserver<ResponseInsertNoti>() {
-
-                    override fun onComplete() {
-
-                    }
-
-                    override fun onNext(response: ResponseInsertNoti) {
-                        Log.d("messageInsertNoti", response.toString())
-                        dataResponse.invoke(response, "")
-
-                    }
-
-                    override fun onError(e: Throwable) {
-                        Log.d("messageInsertNoti", e.message!!.toString())
-                        dataResponse.invoke(null, e.message!!)
-                    }
-                })
-
-    }
+//    fun InsertNotiMainPersenterRx(
+//        hashMap: HashMap<String, String>,
+//        dataResponse: (ResponseInsertNoti?, String) -> Unit
+//        //  MessageError: (String) -> Unit
+//    ) {
+//
+//
+//        mDisposable =
+//            DataModule.myAppService.doInsertnoti(
+//                BodyInsertNoti(
+//                    hashMap["userID"].toString(),
+//                    hashMap["topic"].toString(),
+//                    hashMap["type"].toString(),
+//                    hashMap["level"].toString(),
+//                    hashMap["detail"].toString(),
+//                    hashMap["location"].toString(),
+//                    hashMap["lat"].toString(),
+//                    hashMap["long"].toString()
+//
+//                )
+//            )
+//                .subscribeOn(Schedulers.io())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribeWith(object : DisposableObserver<ResponseInsertNoti>() {
+//
+//                    override fun onComplete() {
+//
+//                    }
+//
+//                    override fun onNext(response: ResponseInsertNoti) {
+//                        Log.d("messageInsertNoti", response.toString())
+//                        dataResponse.invoke(response, "")
+//
+//                    }
+//
+//                    override fun onError(e: Throwable) {
+//                        Log.d("messageInsertNoti", e.message!!.toString())
+//                        dataResponse.invoke(null, e.message!!)
+//                    }
+//                })
+//
+//    }
 
     //Rx Insert user
     fun InsertMainPersenterRx(

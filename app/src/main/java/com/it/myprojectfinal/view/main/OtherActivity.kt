@@ -24,6 +24,13 @@ class OtherActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_other)
+
+        btn_back_other.setOnClickListener {
+            finish()
+        }
+
+
+
         if (packageManager.hasSystemFeature(
                 packageManager.toString()
             )

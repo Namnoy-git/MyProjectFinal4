@@ -34,13 +34,9 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-
         <activity
             android:name=".view.main.MapsActivity"
-            android:label="@string/title_activity_maps" />
+            android:label="@string/title_activity_maps"></activity>
         <activity android:name=".view.main.DeleteMainActivity" />
         <activity android:name=".view.main.EditProfileUserActivity" />
         <activity android:name=".view.main.OtherActivity" />
@@ -50,7 +46,6 @@
         <activity android:name=".view.main.InsertActivity" />
         <activity android:name=".view.main.MainActivity" />
         <activity android:name=".view.login.LoginActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

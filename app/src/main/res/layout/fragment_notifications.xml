@@ -1,18 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/blue"
+    android:orientation="vertical"
     tools:context=".ui.notifications.InsertNotificationsFragment">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:text="หน้าเเจ้งเหตุ"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="30dp"
         android:background="@drawable/trans_white_rectangle"
         android:orientation="vertical">
@@ -30,7 +58,7 @@
             android:drawableLeft="@drawable/ic_border_color"
             android:drawablePadding="5dp"
             android:fontFamily="@font/mitr_semibold"
-            android:hint="หัวเรื่อง"
+            android:text="หัวเรื่อง"
             android:textColor="@color/colorBlack"
 
             android:textSize="18sp"
@@ -56,7 +84,8 @@
                 android:drawableLeft="@drawable/ic_list"
                 android:drawablePadding="5dp"
                 android:fontFamily="@font/mitr_semibold"
-                android:hint="ประเภท"
+                android:textColor="@color/colorBlack"
+                android:text="ประเภท"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -67,8 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-
-              android:fontFamily="@font/mitr"
+                android:fontFamily="@font/mitr"
                 android:gravity="center"
                 android:spinnerMode="dialog" />
 
@@ -80,7 +108,7 @@
                 android:drawableLeft="@drawable/ic_sync_problem"
                 android:drawablePadding="5dp"
                 android:fontFamily="@font/mitr_semibold"
-                android:hint="ระดับความรุนแรง"
+                android:text="ระดับความรุนแรง"
                 android:textColor="@color/colorBlack"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -121,51 +149,89 @@
                 android:inputType="textMultiLine"
                 android:textSize="16dp" />
 
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="match_parent"
-                android:layout_height="33dp"
-                android:layout_marginTop="20dp"
-                android:drawableLeft="@drawable/ic_pin_drop"
-                android:drawablePadding="5dp"
-                android:fontFamily="@font/mitr_semibold"
-                android:text="สถานที่เกิดเหตุ"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/edit_location"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:ems="10"
-                android:fontFamily="@font/mitr"
-                android:gravity="start|top"
-                android:hint="เหตุเกิดที่ไหน"
-                android:inputType="textMultiLine"
-                android:textSize="16dp" />
-
-        <com.google.android.gms.maps.MapView
-            android:id="@+id/mapview"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
+<!--        <com.google.android.gms.maps.MapView-->
+<!--            android:id="@+id/mapview"-->
+<!--            android:layout_width="323dp"-->
+<!--            android:layout_height="374dp"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_marginEnd="20dp" />-->
+        <TextView
+            android:id="@+id/amphor"
             android:layout_width="match_parent"
-            android:layout_height="191dp" />
+            android:layout_height="33dp"
+            android:layout_marginTop="30dp"
+            android:drawableLeft="@drawable/ic_home"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/mitr_semibold"
+            android:textColor="@color/colorBlack"
+            android:text="อำเภอ"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
+
+        <Spinner
+            android:id="@+id/spinneramphor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/mitr"
+            android:gravity="center"
+            android:spinnerMode="dialog" />
+        <TextView
+            android:id="@+id/tambon"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:layout_marginTop="30dp"
+            android:drawableLeft="@drawable/ic_home"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/mitr_semibold"
+            android:textColor="@color/colorBlack"
+            android:text="ตำบล"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinner_tambon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/mitr"
+            android:gravity="center"
+            android:spinnerMode="dialog" />
+
+
+        <ImageView
+            android:id="@+id/map_Next"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:background="@drawable/map"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="16dp"
+            android:textColor="#0066CC	"
+            android:fontFamily="@font/mitr_semibold"
+            android:text="แสดงแผนที่"
+
+            />
         <Button
                 android:id="@+id/buttonNext"
-                android:layout_width="match_parent"
+                android:layout_width="250dp"
                 android:layout_height="59dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:background="#F89560"
                 android:fontFamily="@font/mitr"
-                android:gravity="center"
-                android:text="ต่อไป"
+                android:layout_gravity="center"                android:text="ต่อไป"
                 android:layout_marginBottom="50dp"
                 android:textStyle="bold" />
 
         </LinearLayout>
-
 </ScrollView>
+</LinearLayout>

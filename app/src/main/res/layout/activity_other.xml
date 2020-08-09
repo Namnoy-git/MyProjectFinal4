@@ -8,7 +8,40 @@
     tools:context=".view.main.ShowDataNoti"
     android:orientation="vertical">
 
+       <com.google.android.material.appbar.AppBarLayout
+           android:id="@+id/frameLayout"
+           android:layout_width="match_parent"
+           android:layout_height="56dp">
 
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:gravity="center_vertical"
+                  android:orientation="horizontal">
+
+                     <ImageButton
+                         android:id="@+id/btn_back_other"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_gravity="center_vertical"
+                         android:layout_marginLeft="10dp"
+                         android:background="#00FFFFFF"
+                         android:src="@drawable/abc_vector_test"
+                         android:tint="#F3EFEF" />
+
+                     <TextView
+                         android:id="@+id/textView12"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_gravity="center"
+                         android:layout_marginLeft="5dp"
+                         android:text="สายด่วน"
+                         android:textColor="#FFFFFF"
+                         android:textSize="24sp" />
+
+
+              </LinearLayout>
+       </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
         android:layout_width="match_parent"

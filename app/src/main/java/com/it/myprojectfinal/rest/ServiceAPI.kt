@@ -21,7 +21,6 @@ interface ServiceAPI {
     fun doGetProfile(@Body body: BodyProfile?):Observable<ResponseProfile>
 
 
-
     //post เพิ่มข้อมูล
     @POST("/regis")
     fun doInsert(@Body body: BodyInsert):Observable<ResponseInsert>
@@ -45,5 +44,13 @@ interface ServiceAPI {
 
     @PUT("/user/{id}")
     fun doUpdateuser(@Path("id") userId: String, @Body body: BodyUpdateUser?):Observable<ResponseProfile>
+
+    //get image
+    @GET("/getimage/{id}")
+    fun dogetimage(@Path("id") userId: String): Observable<ResponseGetImageNoti>
+
+    @GET("/getamphur")
+    fun doGetAmphur(): Observable<ResponseGetAmphur>
+
 
 }

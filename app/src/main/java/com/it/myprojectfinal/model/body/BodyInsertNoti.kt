@@ -7,7 +7,8 @@ data class BodyInsertNoti(
     val type: String,
     val voilent: String,
     val detail: String,
-    val location: String,
+    val amphur: String,
+    val tambon : String,
     val lat: String,
     val long: String
 

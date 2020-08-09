@@ -63,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#F5DEB3"
-            android:text="เพิ่มรูปภาพ"
+            android:text="บันทึกรูปภาพ"
             android:fontFamily="@font/mitr"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

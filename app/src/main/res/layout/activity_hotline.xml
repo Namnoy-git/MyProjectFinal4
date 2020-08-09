@@ -6,25 +6,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".HotlineActivity">
+    tools:context=".view.main.HotlineActivity">
 
-    <LinearLayout
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/trans_white_rectangle"
-        android:orientation="horizontal">
-
-        <TextView
+        android:layout_height="56dp">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/mitr"
-            android:gravity="center"
-            android:text="สายด่วน"
-            android:textColor="@color/colorBlack"
-            android:textSize="30dp"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn_back_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:background="#00FFFFFF"
+                android:src="@drawable/abc_vector_test"
+                android:tint="#F3EFEF" />
+            <TextView
+                android:id="@+id/hotline_ba"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:text="สายด่วน"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
         android:layout_width="match_parent"

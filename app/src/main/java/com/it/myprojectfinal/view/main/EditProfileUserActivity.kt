@@ -33,9 +33,15 @@ class EditProfileUserActivity : AppCompatActivity() {
         TV_EditAddress.setText(address)
         TV_EditPhone.setText(phone)
 
+
+        btn_back_profile.setOnClickListener {
+            finish()
+        }
+
         btnEditConfirmProfile.setOnClickListener {
             val i = Intent(this,ProfileUserActivity::class.java)
             startActivity(i)
+            finish()
         }
 
     }

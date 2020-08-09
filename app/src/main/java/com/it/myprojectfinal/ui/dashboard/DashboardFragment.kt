@@ -13,7 +13,6 @@ import com.it.myprojectfinal.R
 import com.it.myprojectfinal.rest.local.Preferrences
 import com.it.myprojectfinal.rest.local.Preferrences.Companion.FILENAME
 import com.it.myprojectfinal.view.login.LoginActivity
-import com.it.myprojectfinal.view.main.MapsActivity
 import com.it.myprojectfinal.view.main.OtherActivity
 import com.it.myprojectfinal.view.main.ProfileUserActivity
 import kotlinx.android.synthetic.main.fragment_dashboard.view.*
