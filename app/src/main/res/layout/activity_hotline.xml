@@ -19,14 +19,14 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/btn_back_map"
-                android:layout_width="wrap_content"
+                android:id="@+id/btn_back_profile"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
                 android:background="#00FFFFFF"
-                android:src="@drawable/abc_vector_test"
-                android:tint="#F3EFEF" />
+                android:src="@drawable/backone"
+                android:tint="#F8F2F2" />
             <TextView
                 android:id="@+id/hotline_ba"
                 android:layout_width="wrap_content"

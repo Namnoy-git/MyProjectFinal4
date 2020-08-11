@@ -45,7 +45,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         mapFragment.getMapAsync(this)
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
-        btn_back_map.setOnClickListener {
+        TV_SaveMap.setOnClickListener {
             intent.putExtra("lat",lat)
             intent.putExtra("long",long)
             setResult(Activity.RESULT_OK,intent)

@@ -5,10 +5,12 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import com.it.myprojectfinal.R
 import com.it.myprojectfinal.controller.Utils
 import com.it.myprojectfinal.model.response.DataList
@@ -21,7 +23,7 @@ import com.it.myprojectfinal.ui.notifications.PresenterFragment
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_edit_profile_user.*
 import kotlinx.android.synthetic.main.activity_profile_user.*
-
+import java.io.File
 
 
 class ProfileUserActivity : AppCompatActivity() {
@@ -60,9 +62,10 @@ class ProfileUserActivity : AppCompatActivity() {
 
     private fun setApi() {
 
-        var imagDetail: ImageView = findViewById(R.id.ImViewProfile)
+        var imagDetail: ImageView = findViewById(R.id.ImViewProfile1)
 
         selectProfile.SelectUser(
+
             mPreferrences.getUserId() ?: "",
 
             { profile ->
@@ -74,9 +77,12 @@ class ProfileUserActivity : AppCompatActivity() {
                 TV_Address.text = profile.message.user_address
                 TV_Phone.text = profile.message.user_phone
 
-                Picasso.get()
-            .load(Utils.BaseUrl+ "/uploadregis/")
-            .into(imagDetail)
+
+                Picasso.get().load(Utils.BaseUrl+ "/uploadregis/"+profile.message.user_img).into(imagDetail)
+                 Log.d("Image",profile.message.user_img)
+//                Picasso.get()
+//            .load(Utils.BaseUrl+ "/uploadregis/"+profile.message.user_img)
+//            .into(imagDetail)
 
             }, {
             })

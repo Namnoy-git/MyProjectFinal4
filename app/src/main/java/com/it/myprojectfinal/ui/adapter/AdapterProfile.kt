@@ -24,7 +24,7 @@ class AdapterProfile(private val ctx: Context, var mArrayUri: ArrayList<String>)
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         layoutInflater = LayoutInflater.from(ctx)
         val itemView: View = layoutInflater!!.inflate(R.layout.activity_profile_user, container, false)
-        val imageView: ImageView = itemView.findViewById(R.id.ImViewProfile) as ImageView
+        val imageView: ImageView = itemView.findViewById(R.id.ImViewProfile1) as ImageView
 
         Picasso.get()
             .load(Utils.BaseUrl+"/uploadregis/"+mArrayUri[position])

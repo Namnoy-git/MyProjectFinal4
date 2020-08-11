@@ -100,7 +100,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="15dp"
-                android:background="@drawable/register_button"
+                android:background="@drawable/edit_button"
                 android:fontFamily="@font/mitr_semibold"
                 android:text="สมัครสมาชิก"
                 android:textStyle="bold" />

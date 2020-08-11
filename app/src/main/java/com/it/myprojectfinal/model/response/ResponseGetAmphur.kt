@@ -6,5 +6,6 @@ data class ResponseGetAmphur(
 )
 
 data class Data(
+    val amphur_id: Int,
     val amphur_name: String
 )

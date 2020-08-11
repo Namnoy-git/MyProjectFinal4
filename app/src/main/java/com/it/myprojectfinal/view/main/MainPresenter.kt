@@ -140,12 +140,13 @@ class MainPresenter {
                 }
 
                 override fun onNext(response: ResponseGetNoti) {
-                    Log.d("message", response.toString())
+                    Log.d("messagedelete", response.toString())
                     datarResponse.invoke(response)
 
                 }
 
                 override fun onError(e: Throwable) {
+                    Log.d("messagedelete", e.message)
                     MessageError.invoke(e.message!!)
                 }
             })
@@ -262,6 +263,7 @@ class MainPresenter {
         email: String,
         address: String,
         phone: String,
+
         datarResponse: (ResponseProfile) -> Unit,
         MessageError: (String) -> Unit
     ) {

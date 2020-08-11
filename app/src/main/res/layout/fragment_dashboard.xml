@@ -24,8 +24,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
-                android:text="หน้าอื่นๆ"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/mitr_semibold"
+                android:text="อื่นๆ"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp" />
 
@@ -38,38 +39,36 @@
         android:layout_weight="8"
         android:alignmentMode="alignMargins"
         android:columnCount="2"
+        android:padding="30dp"
         android:columnOrderPreserved="false"
-        android:padding="14dp"
         android:rowCount="3">
         <!-- Row 1 -->
         <!-- Column 1 -->
         <ImageView
             android:id="@+id/profile"
-            android:layout_width="180dp"
+            android:layout_width="120dp"
             android:layout_height="174dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="50dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginEnd="30dp"
             android:src="@drawable/profileone" />
 
         <ImageView
             android:id="@+id/hotline"
-            android:layout_width="180dp"
+            android:layout_width="120dp"
             android:layout_height="174dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="50dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="50dp"
             android:layout_marginBottom="30dp"
             android:src="@drawable/callone" />
 
         <ImageView
             android:id="@+id/logout"
-            android:layout_width="180dp"
+            android:layout_width="120dp"
             android:layout_height="174dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
             android:layout_marginBottom="30dp"
             android:src="@drawable/logoutone" />
 

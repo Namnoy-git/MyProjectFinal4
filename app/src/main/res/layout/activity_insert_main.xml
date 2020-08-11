@@ -19,6 +19,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
             android:background="@drawable/trans_white_rectangle"
@@ -153,30 +154,35 @@
                 android:hint="เบอร์โทรศัพท์"
                 android:inputType="number"
                 android:textSize="14sp" />
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
             <Button
                 android:id="@+id/btn_insert"
-                android:layout_width="fill_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginBottom="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/login_button"
                 android:fontFamily="@font/mitr_semibold"
                 android:text="ยืนยัน" />
 
             <Button
                 android:id="@+id/cancle"
-                android:layout_width="fill_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="15dp"
+                android:layout_marginTop="10dp"
+
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/register_button"
                 android:fontFamily="@font/mitr_semibold"
                 android:text="ยกเลิก" />
+        </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

@@ -5,10 +5,7 @@ import androidx.fragment.app.Fragment
 import com.it.myprojectfinal.model.body.BodyGetUserNoti
 
 import com.it.myprojectfinal.model.body.BodyInsertNoti
-import com.it.myprojectfinal.model.response.ResponseGetAmphur
-import com.it.myprojectfinal.model.response.ResponseGetImageNoti
-import com.it.myprojectfinal.model.response.ResponseGetNoti
-import com.it.myprojectfinal.model.response.ResponseInsertNoti
+import com.it.myprojectfinal.model.response.*
 import com.it.myprojectfinal.rest.DataModule
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -122,6 +119,33 @@ class PresenterFragment : Fragment() {
 
     }
 
+    fun GetDataTambon(
+
+        datarResponse: (ResponseGetTambon) -> Unit,
+        MessageError: (String) -> Unit
+    ) {
+        mDisposable = DataModule.myAppService.doGetTambon()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeWith(object : DisposableObserver<ResponseGetTambon>() {
+
+                override fun onComplete() {
+
+                }
+
+                override fun onNext(response: ResponseGetTambon) {
+                    Log.d("messageget", response.toString())
+                    datarResponse.invoke(response)
+
+                }
+
+                override fun onError(e: Throwable) {
+                    Log.d("messageget", e.message)
+                    MessageError.invoke(e.message!!)
+                }
+            })
+
+    }
     fun GetDataAmphur(
 
         datarResponse: (ResponseGetAmphur) -> Unit,

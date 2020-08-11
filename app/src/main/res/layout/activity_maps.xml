@@ -15,24 +15,28 @@
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/btn_back_map"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:background="#00FFFFFF"
-                android:src="@drawable/abc_vector_test"
-                android:tint="#F3EFEF" />
+
             <TextView
                 android:id="@+id/textView12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/mitr_semibold"
                 android:text="เเผนที่"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/TV_SaveMap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="300dp"
+                android:fontFamily="@font/mitr_semibold"
+                android:text="บันทึก"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp" />
+
 
 
         </LinearLayout>

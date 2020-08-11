@@ -4,12 +4,15 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.it.myprojectfinal.R
+import com.it.myprojectfinal.controller.Utils
 import com.it.myprojectfinal.model.response.DataList
 
 import com.it.myprojectfinal.model.response.ResponseGetNoti
@@ -19,6 +22,7 @@ import com.it.myprojectfinal.ui.adapter.AdapterDataNoti
 import com.it.myprojectfinal.ui.notifications.PresenterFragment
 import com.it.myprojectfinal.view.main.MainPresenter
 import com.it.myprojectfinal.view.main.ShowDataNoti
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_show_data_noti.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
@@ -30,6 +34,7 @@ class HomeFragment : Fragment() {
     var userID = ""
     var notiPersenter = PresenterFragment()
     var nResponsenoti = ArrayList<DataList>()
+    lateinit private var imagDetail: ImageView
     //    var nSeeuser = ArrayList<ResponseProfileBody>()
     val selectProfile = MainPresenter()
     private lateinit var homeViewModel: HomeViewModel
@@ -49,6 +54,8 @@ class HomeFragment : Fragment() {
         userID = pref.getString("user_id", "") ?: ""
 
 
+
+
         return view.rootView
 
     }
@@ -57,15 +64,21 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setadapter(view)
         setapi()//listnoti
+        imagDetail = view.findViewById(R.id.ImViewProfileHome)
         setApiuser()//userid
     }
 
     private fun setApiuser() {
+
+
+
         selectProfile.SelectUser(
 
             userID,
             {
                 Tv_Uname.text = it.message.user_name
+                Picasso.get().load(Utils.BaseUrl+ "/uploadregis/"+it.message.user_img).into(imagDetail)
+                Log.d("Image",it.message.user_img)
             },
             {
 

@@ -25,7 +25,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/mitr_semibold"
                 android:text="หน้าเเจ้งเหตุ"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp" />
@@ -215,20 +216,79 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="16dp"
-            android:textColor="#0066CC	"
+            android:textSize="18dp"
+            android:textColor="#FF4500	"
             android:fontFamily="@font/mitr_semibold"
             android:text="แสดงแผนที่"
 
             />
+
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:layout_marginTop="20dp"
+            android:drawableLeft="@drawable/ic_sort"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/mitr_semibold"
+            android:text="ละติจูด"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lat_show"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center_horizontal"
+            android:ems="10"
+            android:fontFamily="@font/mitr"
+            android:gravity="start|top"
+            android:hint="ละติจูด"
+            android:inputType="textMultiLine"
+            android:textSize="16dp" />
+
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:layout_marginTop="20dp"
+            android:drawableLeft="@drawable/ic_sort"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/mitr_semibold"
+            android:text="ลองติจูด"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/long_show"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:fontFamily="@font/mitr"
+            android:gravity="start|top"
+            android:hint="ลองติจูด"
+            android:inputType="textMultiLine"
+            android:textSize="16dp" />
         <Button
                 android:id="@+id/buttonNext"
-                android:layout_width="250dp"
+                android:layout_width="match_parent"
                 android:layout_height="59dp"
-                android:layout_marginTop="10dp"
-                android:background="#F89560"
+                android:layout_marginTop="20dp"
+                android:background="#9ACD32"
                 android:fontFamily="@font/mitr"
-                android:layout_gravity="center"                android:text="ต่อไป"
+                android:layout_gravity="center"
+                android:text="ต่อไป"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
                 android:layout_marginBottom="50dp"
                 android:textStyle="bold" />
 

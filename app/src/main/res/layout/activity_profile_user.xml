@@ -11,31 +11,30 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-
         android:layout_height="56dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#00B0FF"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/btn_back_more"
-                android:layout_width="42dp"
-                android:layout_height="29dp"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
                 android:background="#00FFFFFF"
-                android:src="@drawable/abc_vector_test"
-                android:tint="#ECE3E6" />
+                android:src="@drawable/backone"
+                android:tint="#F8F2F2" />
 
             <TextView
                 android:id="@+id/textView12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:fontFamily="@font/mitr_semibold"
                 android:layout_marginLeft="20dp"
                 android:text="โปรไฟล์"
                 android:textColor="#FFFFFF"
@@ -49,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="40dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/trans_white_rectangle"
         android:orientation="vertical">
@@ -58,12 +57,12 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
             app:cardCornerRadius="50dp">
 
             <ImageView
-                android:id="@+id/ImViewProfile"
+                android:id="@+id/ImViewProfile1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
@@ -86,7 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="10dp"
             android:drawableLeft="@drawable/ic_face"
@@ -94,7 +93,7 @@
             android:fontFamily="@font/mitr"
             android:paddingTop="10dp"
             android:text="ชื่อ-สกุล"
-            android:textSize="20dp" />
+            android:textSize="18dp" />
 
         <TextView
             android:id="@+id/TV_Username"
@@ -109,7 +108,7 @@
             android:fontFamily="@font/mitr"
             android:paddingTop="10dp"
             android:text="ชื่อผู้ใช้งาน"
-            android:textSize="20dp" />
+            android:textSize="18dp" />
 
         <TextView
             android:id="@+id/TV_Password"
@@ -124,7 +123,7 @@
             android:fontFamily="@font/mitr"
             android:paddingTop="10dp"
             android:text="รหัสผ่าน"
-            android:textSize="20dp" />
+            android:textSize="18dp" />
 
         <TextView
             android:id="@+id/TV_Email"
@@ -139,7 +138,7 @@
             android:fontFamily="@font/mitr"
             android:paddingTop="10dp"
             android:text="อีเมล"
-            android:textSize="20dp" />
+            android:textSize="18dp" />
 
 
         <TextView
@@ -155,7 +154,7 @@
             android:fontFamily="@font/mitr"
             android:paddingTop="10dp"
             android:text="ที่อยู่"
-            android:textSize="20dp" />
+            android:textSize="18dp" />
 
         <TextView
             android:id="@+id/TV_Phone"
@@ -170,20 +169,19 @@
             android:fontFamily="@font/mitr"
             android:paddingTop="10dp"
             android:text="เบอร์โทรศัพท์"
-            android:textSize="20dp" />
+            android:textSize="18dp" />
 
 
         <Button
             android:id="@+id/btnEditProfile"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="80dp"
             android:layout_marginBottom="30dp"
             android:background="@drawable/edit_button"
             android:fontFamily="@font/mitr"
             android:text="แก้ไข"
-            android:textSize="24dp" />
+            android:textSize="18dp" />
     </LinearLayout>
 </LinearLayout>

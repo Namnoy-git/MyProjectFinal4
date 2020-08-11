@@ -39,7 +39,7 @@ interface ServiceAPI {
 //    @POST("/regisimage")
 //    fun doUserImg(@Body body: BodyUserImg):Observable<ResponseUploadImage>
 
-    @DELETE("/noti/{id}")
+    @DELETE("/deletenoti/{id}")
     fun doDelete(@Path("id")id:Int):Observable<ResponseGetNoti>
 
     @PUT("/user/{id}")
@@ -51,6 +51,9 @@ interface ServiceAPI {
 
     @GET("/getamphur")
     fun doGetAmphur(): Observable<ResponseGetAmphur>
+
+    @GET("/gettambon")
+    fun doGetTambon(): Observable<ResponseGetTambon>
 
 
 }

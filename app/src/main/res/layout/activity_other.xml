@@ -21,13 +21,13 @@
 
                      <ImageButton
                          android:id="@+id/btn_back_other"
-                         android:layout_width="wrap_content"
+                         android:layout_width="50dp"
                          android:layout_height="wrap_content"
                          android:layout_gravity="center_vertical"
                          android:layout_marginLeft="10dp"
                          android:background="#00FFFFFF"
-                         android:src="@drawable/abc_vector_test"
-                         android:tint="#F3EFEF" />
+                         android:src="@drawable/backone"
+                         android:tint="#F8F2F2" />
 
                      <TextView
                          android:id="@+id/textView12"
@@ -36,6 +36,7 @@
                          android:layout_gravity="center"
                          android:layout_marginLeft="5dp"
                          android:text="สายด่วน"
+                         android:fontFamily="@font/mitr_semibold"
                          android:textColor="#FFFFFF"
                          android:textSize="24sp" />
 

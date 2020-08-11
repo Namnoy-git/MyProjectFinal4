@@ -20,23 +20,72 @@
     <!--        app:layout_constraintEnd_toEndOf="parent"-->
     <!--        app:layout_constraintStart_toStartOf="parent"-->
     <!--        app:layout_constraintTop_toTopOf="parent">-->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn_back_image"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:background="#00FFFFFF"
+                android:src="@drawable/backone"
+                android:tint="#F8F2F2" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/mitr_semibold"
+                android:text="เพิ่มรูปภาพ"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
-        android:layout_width="match_parent"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_height="500dp"
+        android:layout_width="309dp"
+        android:layout_height="450dp"
         android:layout_gravity="center"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.viewpagerindicator.CirclePageIndicator
+        android:id="@+id/indicator"
+        android:layout_width="fill_parent"
+        android:layout_height="23dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="bottom"
+        android:padding="10dip"
+        app:centered="true"
+        app:fillColor="#1060E6"
+        app:pageColor="#65DEEA"
+        app:snap="false"
+        app:strokeColor="#6FDFEA" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         android:gravity="center"
@@ -49,10 +98,10 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="50dp"
             android:layout_marginBottom="20dp"
-            android:background="#98FB98"
+            android:background="#33CC66"
             android:fontFamily="@font/mitr"
 
-            android:text="เปิดแกลลอรี่"
+            android:text="เพิ่มรูปภาพ"
             app:layout_constraintBottom_toTopOf="@+id/button_upload"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -62,8 +111,8 @@
             android:id="@+id/button_upload"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#F5DEB3"
-            android:text="บันทึกรูปภาพ"
+            android:background="#FFD700"
+            android:text="เเจ้งเหตุ"
             android:fontFamily="@font/mitr"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

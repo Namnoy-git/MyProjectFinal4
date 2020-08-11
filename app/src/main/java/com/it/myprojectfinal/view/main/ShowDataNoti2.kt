@@ -14,6 +14,7 @@ import android.util.Base64.encodeToString
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.viewpager.widget.ViewPager
 import com.it.myprojectfinal.R
 import com.it.myprojectfinal.controller.Utils
 import com.it.myprojectfinal.model.body.BodyImage
@@ -24,6 +25,7 @@ import com.it.myprojectfinal.ui.notifications.PresenterFragment
 import com.it.myprojectfinal.view.login.LoginActivity
 import com.tangxiaolv.telegramgallery.GalleryActivity
 import com.tangxiaolv.telegramgallery.GalleryConfig
+import com.viewpagerindicator.CirclePageIndicator
 import kotlinx.android.synthetic.main.activity_show_data_noti2.*
 import kotlinx.android.synthetic.main.activity_show_data_noti2.button_openimage
 import kotlinx.android.synthetic.main.activity_show_data_noti2.viewPager
@@ -51,7 +53,9 @@ class ShowDataNoti2 : AppCompatActivity() {
         setContentView(R.layout.activity_show_data_noti2)
 
 
-
+        btn_back_image.setOnClickListener {
+            finish()
+        }
 
         button_openimage.setOnClickListener {
 
@@ -165,11 +169,20 @@ class ShowDataNoti2 : AppCompatActivity() {
 
             photos = data!!.getSerializableExtra(GalleryActivity.PHOTOS) as List<String>
 
+            val viewPager = findViewById<ViewPager>(R.id.viewPager)
+
             // for(i in photos){
             imageViewPagerAdapter =
                 ImageViewPagerAdapter(this@ShowDataNoti2, photos as ArrayList<String>)
             //  }
             viewPager.setAdapter(imageViewPagerAdapter)
+
+            val indicator = findViewById<CirclePageIndicator>(R.id.indicator).also {
+                it.setViewPager(viewPager)
+            }
+            val density = resources.displayMetrics.density
+            indicator.radius = 5 * density
+
 
             //วนเอาที่รูปที่เลือกจาก gallery มา
             for (i in photos) {
@@ -229,6 +242,8 @@ class ShowDataNoti2 : AppCompatActivity() {
         viewPager.setAdapter(null)
         photos = ArrayList()
         uploadImage = ArrayList()
+
+
 
         val i = Intent(this,MainActivity::class.java)
         startActivity(i)

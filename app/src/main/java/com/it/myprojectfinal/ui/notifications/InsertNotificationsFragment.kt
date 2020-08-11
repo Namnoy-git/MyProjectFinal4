@@ -15,8 +15,8 @@ import androidx.fragment.app.FragmentActivity
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.maps.MapView
 import com.it.myprojectfinal.R
-import com.it.myprojectfinal.model.response.DataList
-import com.it.myprojectfinal.model.response.ResponseInsertNoti
+import com.it.myprojectfinal.model.response.*
+
 import com.it.myprojectfinal.rest.local.Preferrences.Companion.FILENAME
 import com.it.myprojectfinal.view.main.MapsActivity
 import com.it.myprojectfinal.view.main.ShowDataNoti2
@@ -37,7 +37,7 @@ class InsertNotificationsFragment : Fragment() {
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var lastLocation: Location
     //ประกาศตัวแปรรับ lat long
-//    private var getspinner = ArrayList<>()
+    private var gettambon = ArrayList<Data>()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -58,7 +58,6 @@ class InsertNotificationsFragment : Fragment() {
 
             val im = Intent(context, MapsActivity::class.java)
             startActivityForResult(im, CODE)
-
         }
 
 
@@ -160,29 +159,7 @@ class InsertNotificationsFragment : Fragment() {
 //            }
 //
 //        }
-        val tambon = listOf("ตลาด","เขวา","ท่าตูม","แวงน่าง","แวงน่าง","ดอนหว่าน")
-        val spinner3 = view.findViewById<Spinner>(R.id.spinner_tambon)
-        spinner3?.adapter = activity?.let {
-            ArrayAdapter(it, R.layout.support_simple_spinner_dropdown_item,tambon
-            )
-        } as SpinnerAdapter
-        spinner3?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                println("erreur")
 
-            }
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                val amphur = parent?.getItemAtPosition(position).toString()
-//                Toast.makeText(activity,types, Toast.LENGTH_LONG).show()
-                println(amphur)
-            }
-
-        }
 
         return view.rootView
 
@@ -193,7 +170,12 @@ class InsertNotificationsFragment : Fragment() {
         InPersenter.GetDataAmphur(
 
             {
-                val amphur = listOf(it.data)
+
+                val amphur = ArrayList<String>()
+                for(i in it.data){
+                    amphur.add(i.amphur_name)
+                }
+
 
 
                 val spinner2 = view.findViewById<Spinner>(R.id.spinneramphor)
@@ -218,7 +200,6 @@ class InsertNotificationsFragment : Fragment() {
                     }
 
                 }
-//                Log.d("messagegetampuhr", it.data.amphur_name)
 
 
             },
@@ -227,6 +208,47 @@ class InsertNotificationsFragment : Fragment() {
             }
         )
 
+        InPersenter.GetDataTambon(
+
+
+            {
+
+                val gettambon = ArrayList<String>()
+                for(i in it.message){
+                    gettambon.add(i.tambon_name)
+                }
+
+
+                val spinner3 = view.findViewById<Spinner>(R.id.spinner_tambon)
+                spinner3?.adapter = activity?.let {
+                    ArrayAdapter(it, R.layout.support_simple_spinner_dropdown_item,gettambon
+                    )
+                } as SpinnerAdapter
+                spinner3?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                    override fun onNothingSelected(parent: AdapterView<*>?) {
+                        println("erreur")
+
+                    }
+                    override fun onItemSelected(
+                        parent: AdapterView<*>?,
+                        view: View?,
+                        position: Int,
+                        id: Long
+                    ) {
+                        val amphur = parent?.getItemAtPosition(position).toString()
+//                Toast.makeText(activity,types, Toast.LENGTH_LONG).show()
+                        println(amphur)
+                    }
+
+                }
+
+            },
+            {
+
+            }
+
+
+        )
     }
 
 
@@ -237,6 +259,10 @@ class InsertNotificationsFragment : Fragment() {
         long = Data_long
         Toast.makeText(context, lat + " - " + long, Toast.LENGTH_SHORT).show()
         super.onActivityResult(requestCode, resultCode, data)
+
+
+        lat_show.text = lat
+        long_show.text = long
     }
 
     //    private fun initGoogleMap(savedInstanceState: Bundle?) {
