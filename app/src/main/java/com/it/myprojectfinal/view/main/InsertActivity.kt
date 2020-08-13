@@ -50,7 +50,11 @@ class InsertActivity : AppCompatActivity() {
         startActivityForResult(i, PICK_IMAGE)
         }
 
-
+        cancle.setOnClickListener {
+            val i = Intent(this, LoginActivity::class.java)
+            startActivity(i)
+            finish()
+        }
     }
 
 

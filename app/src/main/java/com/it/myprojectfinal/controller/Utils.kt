@@ -7,7 +7,7 @@ import com.google.gson.GsonBuilder
 class Utils {
 
     companion object{
-        const val BaseUrl = "http://192.168.1.4:4000"
+        const val BaseUrl = "http://192.168.1.5:4000"
     }
 
     fun getGson(): Gson? {

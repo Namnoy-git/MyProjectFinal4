@@ -44,9 +44,10 @@
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="126dp"
-                    android:layout_height="134dp"
+                    android:layout_width="128dp"
+                    android:layout_height="139dp"
                     android:layout_gravity="center"
+                    android:layout_marginLeft="40dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp"
                     app:cardCornerRadius="65dp">
@@ -56,15 +57,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/original" />
+                        android:src="@drawable/ic_person" />
 
                 </androidx.cardview.widget.CardView>
+
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/floatingActionButton5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:clickable="true"
                     android:layout_marginTop="100dp"
+                    android:clickable="true"
                     app:backgroundTint="#00E676"
                     app:layout_constraintBottom_toTopOf="@+id/edt_username"
                     app:layout_constraintEnd_toEndOf="parent"
