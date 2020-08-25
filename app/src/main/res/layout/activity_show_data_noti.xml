@@ -18,6 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
+            android:background="#00B0FF"
             android:orientation="horizontal">
 
             <ImageButton
@@ -70,7 +71,7 @@
                 android:hint="หัวข้อการแจ้งเหตุ"
                 android:textStyle="bold"
                 android:textSize="18dp" />
-//
+
 
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/viewpager_Show"

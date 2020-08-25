@@ -137,7 +137,7 @@ class ShowDataNoti2 : AppCompatActivity() {
             .limitPickPhoto(12)
             .singlePhoto(false)
             .hintOfPick("this is pick hint")
-            .filterMimeTypes(arrayOf("image/jpeg"))
+            .filterMimeTypes(arrayOf("image/*"))
             .build()
         GalleryActivity.openActivity(this@ShowDataNoti2, PICK_IMAGE_MULTIPLE, config)
     }

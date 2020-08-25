@@ -42,8 +42,14 @@ interface ServiceAPI {
     @DELETE("/deletenoti/{id}")
     fun doDelete(@Path("id")id:Int):Observable<ResponseGetNoti>
 
-    @PUT("/user/{id}")
-    fun doUpdateuser(@Path("id") userId: String, @Body body: BodyUpdateUser?):Observable<ResponseProfile>
+    @PUT("/userimage/{id}")
+    fun doUpdateuserImage(@Path("id") userId: String, @Body bodyImage: BodyUpdateUserImage?):Observable<ResponseUploadImage>
+
+    @PUT("/usernoimage/{id}")
+    fun doUpdateuserNoImage(@Path("id") userId: String, @Body bodyImage: BodyUpdateProfile?):Observable<ResponseUpdateProfile>
+
+//    @PUT("/user/{id}")
+//    fun doUpdateuser(@Path("id") userId: String, @Body body: BodyUpdateUser?):Observable<ResponseProfile>
 
     //get image
     @GET("/getimage/{id}")

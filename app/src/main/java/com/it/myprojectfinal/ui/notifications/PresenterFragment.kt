@@ -2,6 +2,7 @@ package com.it.myprojectfinal.ui.notifications
 
 import android.util.Log
 import androidx.fragment.app.Fragment
+import com.it.myprojectfinal.model.body.BodyGetTambonNoti
 import com.it.myprojectfinal.model.body.BodyGetUserNoti
 
 import com.it.myprojectfinal.model.body.BodyInsertNoti
@@ -120,7 +121,7 @@ class PresenterFragment : Fragment() {
     }
 
     fun GetDataTambon(
-
+//        amphruId: String,
         datarResponse: (ResponseGetTambon) -> Unit,
         MessageError: (String) -> Unit
     ) {

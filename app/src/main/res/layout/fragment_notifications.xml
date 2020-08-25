@@ -17,6 +17,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#00B0FF"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -219,9 +220,7 @@
             android:textSize="18dp"
             android:textColor="#FF4500	"
             android:fontFamily="@font/mitr_semibold"
-            android:text="แสดงแผนที่"
-
-            />
+            android:text="แสดงแผนที่"/>
 
 
         <TextView

@@ -37,6 +37,7 @@ class AdapterDataNoti(
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+
         return ViewHolder(
             LayoutInflater.from(parent.context).inflate(
                 R.layout.itemdatanoti,
@@ -50,6 +51,9 @@ class AdapterDataNoti(
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
+
+
 
 //        var flie = File("https://www.photoschoolthailand.com/wp-content/uploads/2019/09/rule-of-third-1.jpg")
 
@@ -84,11 +88,15 @@ class AdapterDataNoti(
         }
         holder.itemView.setOnLongClickListener {
 
+//            val builderSingle = AlertDialog.Builder(context).apply {
+//                setMessage("ต้องการลบข้อมูลนี้หรือไม่?")
+//                setPositiveButton("ตกลง",{dialog, which ->})
+//
+
+
             val builderSingle = AlertDialog.Builder(context)
             val animals = arrayOf("ลบ")
-            builderSingle.setItems(animals) { _, which ->
-                when (which) {
-
+            builderSingle.setItems(animals) { _, which -> when (which) {
 
                     0 // ลบข้อมูล
                     -> {
@@ -111,6 +119,7 @@ class AdapterDataNoti(
         val status: TextView = itemsView.findViewById<TextView>(R.id.TV_Detailstatus)
         val time: TextView = itemsView.findViewById<TextView>(R.id.TV_Time)
         val imagDetail: ImageView = itemsView.findViewById<ImageView>(R.id.ImView)
+
 
 
     }

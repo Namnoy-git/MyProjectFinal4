@@ -75,6 +75,9 @@
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/original"></ImageView>
+
+
+
         </androidx.cardview.widget.CardView>
 
         <TextView
@@ -85,6 +88,17 @@
             android:text="id"
             android:textSize="18dp"
             android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/TV_imageEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/mitr_semibold"
+            android:text="เปรี่ยนรูปโปรไฟล์"
+            android:textColor="#3D5AFE"
+            android:textSize="16sp" />
         <EditText
             android:id="@+id/TV_EditName"
             android:layout_width="match_parent"

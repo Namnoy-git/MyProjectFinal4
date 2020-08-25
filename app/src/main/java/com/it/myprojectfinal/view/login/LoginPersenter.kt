@@ -30,12 +30,13 @@ class LoginPersenter {
                 }
 
                 override fun onNext(responselogin: ResponseLogin) {
-                    Log.d("messageLogin",responselogin.toString())
+                    Log.d("messageLoginxxxxxx",responselogin.toString())
                     datarResponse.invoke(responselogin)
 
                 }
 
                 override fun onError(e: Throwable) {
+                    Log.d("messageLoginxxxxxx",e.message.toString())
                     MessageError.invoke(e.message!!)
                 }
             })

@@ -34,7 +34,6 @@ class DashboardFragment : Fragment() {
         pref = context?.getSharedPreferences(FILENAME, Context.MODE_PRIVATE)!!
 
 
-        
         view.hotline.setOnClickListener {
             val i = Intent(context, OtherActivity::class.java)
             startActivity(i)
@@ -48,6 +47,7 @@ class DashboardFragment : Fragment() {
             clearForLogout()
             val mIntent = Intent(context, LoginActivity::class.java)
             startActivity(mIntent)
+
         }
 
         return view
@@ -57,6 +57,7 @@ class DashboardFragment : Fragment() {
         val editor = pref.edit()
         editor.putString(Preferrences.TOKEN, "")
         editor.apply()
+
     }
 
 }

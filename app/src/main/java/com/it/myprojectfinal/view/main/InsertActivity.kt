@@ -62,6 +62,7 @@ class InsertActivity : AppCompatActivity() {
 
     private fun setapi() {
         btn_insert.setOnClickListener {
+
             mMainPersenter.upLoadUserImage(
                 edt_name.text.toString(),
                 edt_username.text.toString(),
@@ -72,15 +73,11 @@ class InsertActivity : AppCompatActivity() {
                 imageName
 
             ) {
-                if (it) {
+
                     val i = Intent(this, LoginActivity::class.java)
                     startActivity(i)
-
-                } else {
-                    Toast.makeText(this, "พบข้อผิดพลาด!", Toast.LENGTH_SHORT).show()
-
-                }
-
+                    finish()
+                    Toast.makeText(this, "สมัครสมาชิกเรียบร้อยเเล้ว", Toast.LENGTH_SHORT).show()
 
             }
 

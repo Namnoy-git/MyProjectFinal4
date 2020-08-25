@@ -18,3 +18,7 @@ data class BodyGetNoti (
 data class BodyGetUserNoti(
     val userId: String
 )
+
+data class BodyGetTambonNoti(
+    val amphruId: String
+)

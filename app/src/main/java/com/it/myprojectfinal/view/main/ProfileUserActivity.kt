@@ -30,6 +30,7 @@ class ProfileUserActivity : AppCompatActivity() {
 
     var mPreferrences = Preferrences(this)
     val selectProfile = MainPresenter()
+    var Image = ""
     private var imageViewAdapter: AdapterProfile? = null
     var mResponseProfile = ArrayList<ResponseProfileBody>()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,9 +53,10 @@ class ProfileUserActivity : AppCompatActivity() {
             i.putExtra("email", TV_Email.text.toString())
             i.putExtra("address", TV_Address.text.toString())
             i.putExtra("phone", TV_Phone.text.toString())
-
+            i.putExtra("img",Image)
 
             startActivity(i)
+            finish()
         }
     }
 
@@ -77,7 +79,7 @@ class ProfileUserActivity : AppCompatActivity() {
                 TV_Address.text = profile.message.user_address
                 TV_Phone.text = profile.message.user_phone
 
-
+                Image = profile.message.user_img
                 Picasso.get().load(Utils.BaseUrl+ "/uploadregis/"+profile.message.user_img).into(imagDetail)
                  Log.d("Image",profile.message.user_img)
 //                Picasso.get()
