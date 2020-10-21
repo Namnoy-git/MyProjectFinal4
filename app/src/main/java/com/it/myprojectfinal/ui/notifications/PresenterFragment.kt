@@ -2,10 +2,8 @@ package com.it.myprojectfinal.ui.notifications
 
 import android.util.Log
 import androidx.fragment.app.Fragment
-import com.it.myprojectfinal.model.body.BodyGetTambonNoti
-import com.it.myprojectfinal.model.body.BodyGetUserNoti
+import com.it.myprojectfinal.model.body.*
 
-import com.it.myprojectfinal.model.body.BodyInsertNoti
 import com.it.myprojectfinal.model.response.*
 import com.it.myprojectfinal.rest.DataModule
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -66,6 +64,34 @@ class PresenterFragment : Fragment() {
 
     }
 
+    fun insertTimeReportAdminRx(
+
+        datarResponse: (ResponseInsertNoti) -> Unit,
+        MessageError: (String) -> Unit
+    ) {
+        mDisposable = DataModule.myAppService.doreporttime()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeWith(object : DisposableObserver<ResponseInsertNoti>() {
+
+                override fun onComplete() {
+
+                }
+
+                override fun onNext(response: ResponseInsertNoti) {
+                    Log.d("messageinserttime", response.toString())
+                    datarResponse.invoke(response)
+
+                }
+
+                override fun onError(e: Throwable) {
+                    Log.d("messageinserttime", e.message)
+                    MessageError.invoke(e.message!!)
+                }
+            })
+
+    }
+
     fun GetNotiPersenterRx(
         user_id: String,
         datarResponse: (ResponseGetNoti) -> Unit,
@@ -120,12 +146,40 @@ class PresenterFragment : Fragment() {
 
     }
 
+    fun GetCheckNotiRx(
+        notic_id: String,
+        datarResponse: (ResponseNotiCheck) -> Unit,
+        MessageError: (String) -> Unit
+    ) {
+        mDisposable = DataModule.myAppService.dogetcheck(notic_id)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeWith(object : DisposableObserver<ResponseNotiCheck>() {
+
+                override fun onComplete() {
+
+                }
+
+                override fun onNext(response: ResponseNotiCheck) {
+                    Log.d("messagegetchecknoti", response.toString())
+                    datarResponse.invoke(response)
+
+                }
+
+                override fun onError(e: Throwable) {
+                    Log.d("messagegetchecknoti", e.message)
+                    MessageError.invoke(e.message!!)
+                }
+            })
+
+    }
+
     fun GetDataTambon(
-//        amphruId: String,
+        amphruId: Int,
         datarResponse: (ResponseGetTambon) -> Unit,
         MessageError: (String) -> Unit
     ) {
-        mDisposable = DataModule.myAppService.doGetTambon()
+        mDisposable = DataModule.myAppService.doGetTambon(amphruId)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeWith(object : DisposableObserver<ResponseGetTambon>() {
@@ -169,6 +223,65 @@ class PresenterFragment : Fragment() {
 
                 override fun onError(e: Throwable) {
                     Log.d("messageget", e.message)
+                    MessageError.invoke(e.message!!)
+                }
+            })
+
+    }
+
+    fun GetCheckNoti(
+        u_id :String, status:String,
+        datarResponse: (ResponseCheckNoti) -> Unit,
+        MessageError: (String) -> Unit
+    ) {
+        mDisposable = DataModule.myAppService.dogetCheckNoti(BodyChecknoti(u_id,status))
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeWith(object : DisposableObserver<ResponseCheckNoti>() {
+
+                override fun onComplete() {
+
+                }
+
+                override fun onNext(response: ResponseCheckNoti) {
+                    Log.d("messageget", response.toString())
+                    datarResponse.invoke(response)
+
+                }
+
+                override fun onError(e: Throwable) {
+                    Log.d("messageget", e.message)
+                    MessageError.invoke(e.message!!)
+                }
+            })
+
+    }
+
+    fun CheckNotiRx(
+        u_id:String
+        ,locality:String
+        ,message:String
+        ,status:String,
+        datarResponse: (ResponseCheckNoti2) -> Unit,
+        MessageError: (String) -> Unit
+    ) {
+        mDisposable = DataModule.myAppService.doCheckNoti(BodyCheckNoti2(u_id,locality,message,status))
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeWith(object : DisposableObserver<ResponseCheckNoti2>() {
+
+                override fun onComplete() {
+
+                }
+
+                override fun onNext(response: ResponseCheckNoti2) {
+                    Log.d("messagegetCheckNotiRx", response.toString())
+                    datarResponse.invoke(response)
+
+                }
+
+                override fun onError(e: Throwable) {
+                    Log.d("messagegetCheckNotiRx", e.message)
                     MessageError.invoke(e.message!!)
                 }
             })

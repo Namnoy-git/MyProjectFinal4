@@ -124,6 +124,33 @@ class MainPresenter {
             })
 
     }
+    fun DeleteCheckPersenterRx(
+        id: Int,
+        datarResponse: (ResponseCheckNoti) -> Unit,
+        MessageError: (String) -> Unit
+    ) {
+        mDisposable = DataModule.myAppService.doDeleteCheck(id)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeWith(object : DisposableObserver<ResponseCheckNoti>() {
+
+                override fun onComplete() {
+
+                }
+
+                override fun onNext(response: ResponseCheckNoti) {
+                    Log.d("messagedeleteCheck", response.toString())
+                    datarResponse.invoke(response)
+
+                }
+
+                override fun onError(e: Throwable) {
+                    Log.d("messagedeleteCheck", e.message)
+                    MessageError.invoke(e.message!!)
+                }
+            })
+
+    }
 
 
     fun upLoadImage(

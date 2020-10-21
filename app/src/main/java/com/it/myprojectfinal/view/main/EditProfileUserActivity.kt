@@ -57,6 +57,8 @@ class EditProfileUserActivity : AppCompatActivity() {
 
 
         btn_back_profile.setOnClickListener {
+            val i  = Intent(this,ProfileUserActivity::class.java)
+            startActivity(i)
             finish()
         }
 

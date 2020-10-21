@@ -36,6 +36,7 @@ class InsertNotificationsFragment : Fragment() {
     private var mMapView: MapView? = null
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var lastLocation: Location
+    private lateinit var spinnertambon :Spinner
 
     //ประกาศตัวแปรรับ lat long
     private var gettambon = ArrayList<Data>()
@@ -53,8 +54,9 @@ class InsertNotificationsFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_notifications, container, false)
 //        mMapView = view.findViewById(R.id.mapview)
+        spinnertambon = view.findViewById<Spinner>(R.id.spinner_tambon)
         setapi(view)
-        setspinner(view)
+        setspinneramphur(view)
         view.map_Next.setOnClickListener {
 
             val im = Intent(context, MapsActivity::class.java)
@@ -141,52 +143,9 @@ class InsertNotificationsFragment : Fragment() {
 
     }
 
-    private fun setspinner(view: View) {
-        var amphurID = ""
-        InPersenter.GetDataAmphur(
-
-            {
-
-                val amphur = ArrayList<String>()
-                for (i in it.data) {
-                    amphur.add(i.amphur_name)
-                }
-
-//                for (i in it.data) {
-//                    amphurID = i.amphur_id
-//                }
-
-
-                val spinner2 = view.findViewById<Spinner>(R.id.spinneramphor)
-                spinner2?.adapter = activity?.let {
-                    ArrayAdapter(
-                        it, R.layout.support_simple_spinner_dropdown_item, amphur
-                    )
-                } as SpinnerAdapter
-                spinner2?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                    override fun onNothingSelected(parent: AdapterView<*>?) {
-                        println("erreur")
-
-                    }
-
-                    override fun onItemSelected(
-                        parent: AdapterView<*>?,
-                        view: View?,
-                        position: Int,
-                        id: Long
-                    ) {
-                        val amphur = parent?.getItemAtPosition(position).toString()
-//                Toast.makeText(activity,types, Toast.LENGTH_LONG).show()
-                        println(amphur)
-                    }
-                }
-            },
-            {
-
-            }
-        )
+    private fun setspinnertambon(amphurID:Int) {
         InPersenter.GetDataTambon(
-//            amphurID,
+            amphurID,
             {
 
                 val gettambon = ArrayList<String>()
@@ -195,7 +154,7 @@ class InsertNotificationsFragment : Fragment() {
                 }
 
 
-                val spinner3 = view.findViewById<Spinner>(R.id.spinner_tambon)
+                val spinner3 = spinnertambon
                 spinner3?.adapter = activity?.let {
                     ArrayAdapter(
                         it, R.layout.support_simple_spinner_dropdown_item, gettambon
@@ -228,12 +187,57 @@ class InsertNotificationsFragment : Fragment() {
         )
     }
 
+    private fun setspinneramphur(view: View) {
+
+        InPersenter.GetDataAmphur(
+
+            {
+
+                val amphur = ArrayList<String>()
+                for (i in it.data) {
+                    amphur.add(i.amphur_name)
+                }
+
+//                for (i in it.data) {
+//                    amphurID = i.amphur_id
+//                }
+
+
+                val spinner2 = view.findViewById<Spinner>(R.id.spinneramphor)
+                spinner2?.adapter = activity?.let {
+                    ArrayAdapter(
+                        it, R.layout.support_simple_spinner_dropdown_item, amphur
+                    )
+                } as SpinnerAdapter
+                spinner2?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                    override fun onNothingSelected(parent: AdapterView<*>?) {
+                        println("erreur")
+
+                    }
+
+                    override fun onItemSelected(
+                        parent: AdapterView<*>?,
+                        view: View?,
+                        position: Int,
+                        id: Long
+                    ) {
+                        setspinnertambon(position+1)
+                    }
+                }
+            },
+            {
+
+            }
+        )
+
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         var Data_lat = data!!.getStringExtra("lat")
         var Data_long = data!!.getStringExtra("long")
         lat = Data_lat
         long = Data_long
-        Toast.makeText(context, lat + " - " + long, Toast.LENGTH_SHORT).show()
+//        Toast.makeText(context, lat + " - " + long, Toast.LENGTH_SHORT).show()
         super.onActivityResult(requestCode, resultCode, data)
 
 
@@ -272,7 +276,31 @@ class InsertNotificationsFragment : Fragment() {
 //        val sendTo = "0981721044"
 //        val message = "ท่านได้ทำการเเจ้งเหตุเเล้ว"
 //        smsMan.sendTextMessage(sendTo,null, message, null, null)
+//        Toast.makeText(context, response.message.notic_tambon, Toast.LENGTH_SHORT).show()
 
+            InPersenter.insertTimeReportAdminRx(
+                {
+
+                },
+                {
+
+                }
+            )
+
+
+        InPersenter.CheckNotiRx(
+            userID,
+            response.message.notic_tambon,
+            edt_topic.text.toString(),
+            "หน่วยงาน",
+
+            {
+//                Toast.makeText(context, "บันทึกข้อมูลเรียบร้อย", Toast.LENGTH_SHORT).show()
+            },
+            {
+
+            }
+        )
 
         val i = Intent(context, ShowDataNoti2::class.java)
         i.putExtra("notic_id", response.notic_id)

@@ -26,31 +26,24 @@ class ShowDataNoti : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show_data_noti)
         setApi()
-
+        setapi2()
         btn_back_detall.setOnClickListener {
             finish()
         }
 
-        val topic:String = intent.getStringExtra("notic_topic")
-        val detail:String = intent.getStringExtra("notic_detail")
-        val type:String = intent.getStringExtra("notic_type")
-        val voilent:String = intent.getStringExtra("notic_voilent")
-        val amphur:String = intent.getStringExtra("notic_amphur")
-        val tambon:String = intent.getStringExtra("notic_tambon")
-        val status:String = intent.getStringExtra("notic_status")
-        val steps:String = intent.getStringExtra("notic_steps")
-        val lat:String = intent.getStringExtra("notic_lat")
-        val long:String = intent.getStringExtra("notic_long")
-        val time:String = intent.getStringExtra("notic_time")
+//        val topic:String = intent.getStringExtra("notic_topic")
+//        val detail:String = intent.getStringExtra("notic_detail")
+//        val type:String = intent.getStringExtra("notic_type")
+//        val voilent:String = intent.getStringExtra("notic_voilent")
+//        val amphur:String = intent.getStringExtra("notic_amphur")
+//        val tambon:String = intent.getStringExtra("notic_tambon")
+//        val status:String = intent.getStringExtra("notic_status")
+//        val steps:String = intent.getStringExtra("notic_steps")
+//        val lat:String = intent.getStringExtra("notic_lat")
+//        val long:String = intent.getStringExtra("notic_long")
+//        val time:String = intent.getStringExtra("notic_time")
 
-        Showtopic.text = topic
-        Showtype.text = type
-        Showleval.text = voilent
-        Showdetail.text = detail
-        Show_amphur.text = amphur
-        Show_tambon.text = tambon
-        Showhelp.text = status
-        Showdetailhelp.text = steps
+
 //        TV_LatShow.text = lat
 //        TV_LongtShow.text = long
 //        TV_TimetShow.text = time
@@ -63,7 +56,25 @@ class ShowDataNoti : AppCompatActivity() {
             this::onSuccessSub,
             this::onErrorSub)
     }
+private fun setapi2(){
+    val notic_id = intent.getStringExtra("notic_id")
+    notiPersenter.GetCheckNotiRx(
+        notic_id,
+        {
+            Showtopic.text = it.message[0].notic_topic
+            Showtype.text = it.message[0].notic_type
+            Showleval.text = it.message[0].notic_voilent
+            Showdetail.text = it.message[0].notic_detail
+            Show_amphur.text =it.message[0].notic_amphur
+            Show_tambon.text = it.message[0].notic_tambon
+            Showhelp.text = it.message[0].notic_status
+            Showdetailhelp.text = it.message[0].notic_steps
+        },
+        {
 
+        }
+    )
+}
     private fun onErrorSub(e: String) {
 
     }

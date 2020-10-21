@@ -20,6 +20,7 @@ import com.it.myprojectfinal.model.response.ResponseProfileBody
 import com.it.myprojectfinal.rest.local.Preferrences.Companion.FILENAME
 import com.it.myprojectfinal.ui.adapter.AdapterDataNoti
 import com.it.myprojectfinal.ui.notifications.PresenterFragment
+import com.it.myprojectfinal.view.main.CheckNotiActivity
 import com.it.myprojectfinal.view.main.MainPresenter
 import com.it.myprojectfinal.view.main.ShowDataNoti
 import com.squareup.picasso.Picasso
@@ -48,6 +49,7 @@ class HomeFragment : Fragment() {
     ): View? {
 
         val view = inflater.inflate(R.layout.fragment_home, container, false)
+        startActivity(Intent(context, CheckNotiActivity::class.java))
 
         pref = context?.getSharedPreferences(FILENAME, Context.MODE_PRIVATE)!!
 

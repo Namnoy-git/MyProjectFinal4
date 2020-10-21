@@ -38,10 +38,11 @@ class OtherActivity : AppCompatActivity() {
             return
 
         }
-        if (ContextCompat.checkSelfPermission(this,CALL)
-            == GRANTED){
+        if (ContextCompat.checkSelfPermission(this, CALL)
+            == GRANTED
+        ) {
             call()
-        }else{
+        } else {
             requestPermissions(arrayOf(CALL), CALL_CODE)
         }
     }
@@ -52,71 +53,73 @@ class OtherActivity : AppCompatActivity() {
         grantResults: IntArray
     ) {
 
-        if (requestCode == CALL_CODE){
-            if (permissions.isNotEmpty()&&
-                grantResults[0]== GRANTED){
+        if (requestCode == CALL_CODE) {
+            if (permissions.isNotEmpty() &&
+                grantResults[0] == GRANTED
+            ) {
                 call()
-            }else{
-                Toast.makeText(baseContext,"Permission Denied",Toast.LENGTH_LONG).show()
+            } else {
+                Toast.makeText(baseContext, "Permission Denied", Toast.LENGTH_LONG).show()
             }
 
         }
 
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
-    private  fun  call(){
 
-         showcall.setOnClickListener{
-        val itn = Intent(Intent.ACTION_DIAL)
-        itn.setData(Uri.parse("tel:191"))
-        startActivity(itn)
-   }
-         showcall1.setOnClickListener{
+    private fun call() {
+
+        showcall.setOnClickListener {
+            val itn = Intent(Intent.ACTION_DIAL)
+            itn.setData(Uri.parse("tel:191"))
+            startActivity(itn)
+        }
+        showcall1.setOnClickListener {
             val itn = Intent(Intent.ACTION_DIAL)
             itn.setData(Uri.parse("tel:199"))
             startActivity(itn)
         }
-        showcall2.setOnClickListener{
+        showcall2.setOnClickListener {
             val itn = Intent(Intent.ACTION_DIAL)
             itn.setData(Uri.parse("tel:1669"))
             startActivity(itn)
         }
-        showcall3.setOnClickListener{
+        showcall3.setOnClickListener {
             val itn = Intent(Intent.ACTION_DIAL)
             itn.setData(Uri.parse("tel:1155"))
             startActivity(itn)
         }
-        showcall4.setOnClickListener{
+        showcall4.setOnClickListener {
             val itn = Intent(Intent.ACTION_DIAL)
             itn.setData(Uri.parse("tel:1300"))
             startActivity(itn)
         }
-        showcall5.setOnClickListener{
+        showcall5.setOnClickListener {
             val itn = Intent(Intent.ACTION_DIAL)
             itn.setData(Uri.parse("tel:1192"))
             startActivity(itn)
         }
-        showcall6.setOnClickListener{
+        showcall6.setOnClickListener {
             val itn = Intent(Intent.ACTION_DIAL)
             itn.setData(Uri.parse("tel:1146"))
             startActivity(itn)
         }
-        showcall7.setOnClickListener{
+        showcall7.setOnClickListener {
             val itn = Intent(Intent.ACTION_DIAL)
             itn.setData(Uri.parse("tel:1808"))
             startActivity(itn)
         }
-        showcall8.setOnClickListener{
+        showcall8.setOnClickListener {
             val itn = Intent(Intent.ACTION_DIAL)
             itn.setData(Uri.parse("tel:1196"))
             startActivity(itn)
         }
-        showcall9.setOnClickListener{
+        showcall9.setOnClickListener {
             val itn = Intent(Intent.ACTION_DIAL)
             itn.setData(Uri.parse("tel:1197"))
             startActivity(itn)
         }
-        showcall10.setOnClickListener{
+        showcall10.setOnClickListener {
             val itn = Intent(Intent.ACTION_DIAL)
             itn.setData(Uri.parse("tel:192"))
             startActivity(itn)
